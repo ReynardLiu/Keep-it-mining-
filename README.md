@@ -133,8 +133,7 @@ Project direncanakan menggunakan aset *open-source* / gratis dan piranti lunak b
 | **Visual Assets** | Buatan Sendiri / CC0 Pixel Art | Rp0 |
 | **Audio Assets** | CC0 Audio / Freesound.org | Rp0 |
 | **Hosting & Distribusi** | Itch.io / Steam (Internal Testing) | Rp0 |
-| **Biaya Tidak Terduga** | Dana Darurat / Aset Tambahan | Rp500.000 |
-| **TOTAL ESTIMASI** | | **Rp500.000** |
+| **TOTAL ESTIMASI** | | **Rp0** |
 
 ---
 
