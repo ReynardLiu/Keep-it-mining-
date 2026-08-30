@@ -2,7 +2,7 @@
 
 [![Engine](https://img.shields.io/badge/Engine-Godot-blue?logo=godotengine)](https://godotengine.org/)
 [![Genre](https://img.shields.io/badge/Genre-Mining%20%7C%20Adventure%20%7C%20Casual-green)](#)
-[![Platform](https://img.shields.io/badge/Platform-PC-orange)](#)
+[![Platform](https://img.shields.io/badge/Platform-PC%20%7C%20Android-orange)](#)
 [![Visual Style](https://img.shields.io/badge/Visual-2D%20Pixel%20Art-purple)](#)
 
 **Keep It Mining** adalah game simulasi pertambangan 2D bergaya *pixel art* yang memadukan aktivitas eksplorasi, *resource gathering*, strategi upgrade, dan tantangan asah otak melalui teka-teki matematika.
