@@ -1,4 +1,4 @@
-# KEEP IT MINING ⛏️
+# KEEP IT MINING 
 
 [![Engine](https://img.shields.io/badge/Engine-Godot-blue?logo=godotengine)](https://godotengine.org/)
 [![Genre](https://img.shields.io/badge/Genre-Mining%20%7C%20Adventure%20%7C%20Casual-green)](#)
