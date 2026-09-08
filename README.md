@@ -22,6 +22,8 @@
 - [Timeline Pengembangan](#-timeline-pengembangan)
 - [Budget & Estimasi Biaya](#-budget--estimasi-biaya)
 - [Aset & Lisensi](#-aset--lisensi)
+  - [Audio & Sound Effects](#-audio--sound-effects)
+  - [Visual & Sprites](#-visual--sprites)
 - [Target Akhir](#-target-akhir)
 
 ---
@@ -146,6 +148,21 @@ Seluruh aset yang dimasukkan ke dalam game mengikuti ketentuan hukum hak cipta y
    * Aset buatan sendiri (*original work*).
    * Aset gratis berlisensi domain publik (CC0) atau atribusi (*CC-BY*).
    * Seluruh sumber aset eksternal dicatat secara rapi dalam dokumen *Credits*.
+
+### 🎵 Audio & Sound Effects
+
+| Kegunaan Aset | Nama Aset / Channel | Link / Sumber |
+| :--- | :--- | :--- |
+| **Walking SFX** | Sound Effects Pack | [Tonton di YouTube](https://youtu.be) |
+| **Main Menu BGM**| Casual Video Game Music | [Tonton di YouTube](https://youtu.be) |
+| **Cave Ambient** | Horror & Dark Ambient | [Tonton di YouTube](https://youtu.be) |
+| **Pickaxe SFX**  | Mining Sound Effect | [Tonton di YouTube](https://youtu.be) |
+
+### 🎨 Visual & Sprites
+
+| Kegunaan Aset | Nama Aset | Kreator / Lisensi | Sumber |
+| :--- | :--- | :--- | :--- |
+| **UI & HUD** | Free Basic Pixel Art UI for RPG | CraftPix (Free License) | [Kunjungi CraftPix](https://craftpix.net) |
 
 ---
 
