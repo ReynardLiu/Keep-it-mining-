@@ -153,16 +153,16 @@ Seluruh aset yang dimasukkan ke dalam game mengikuti ketentuan hukum hak cipta y
 
 | Kegunaan Aset | Nama Aset / Channel | Link / Sumber |
 | :--- | :--- | :--- |
-| **Walking SFX** | Sound Effects Pack | [Tonton di YouTube](https://youtu.be) |
-| **Main Menu BGM**| Casual Video Game Music | [Tonton di YouTube](https://youtu.be) |
-| **Cave Ambient** | Horror & Dark Ambient | [Tonton di YouTube](https://youtu.be) |
-| **Pickaxe SFX**  | Mining Sound Effect | [Tonton di YouTube](https://youtu.be) |
+| **Walking SFX** | Sound Effects Pack | [Kunjungi YouTube](https://youtu.be/BqxWMwAjmfY) |
+| **Main Menu BGM**| Casual Video Game Music | [Kunjungi YouTube](https://youtu.be/dVLgoANZE6U) |
+| **Cave Ambient** | Horror & Dark Ambient | [Kunjungi YouTube](https://youtu.be/a0PvlNn7B-0) |
+| **Pickaxe SFX**  | Mining Sound Effect | [Kunjungi Youtube](https://youtu.be/aWRNi4s6_GA) |
 
 ### 🎨 Visual & Sprites
 
 | Kegunaan Aset | Nama Aset | Kreator / Lisensi | Sumber |
 | :--- | :--- | :--- | :--- |
-| **UI & HUD** | Free Basic Pixel Art UI for RPG | CraftPix (Free License) | [Kunjungi CraftPix](https://craftpix.net) |
+| **UI & HUD** | Free Basic Pixel Art UI for RPG | CraftPix (Free License) | [Kunjungi CraftPix](https://craftpix.net/freebies/free-basic-pixel-art-ui-for-rpg/?srsltid=AfmBOooJRb-M2aw--_Hm-0XqsS-K8PTjIXNi7iAM4N4dIFV4qQBHe3fb) |
 
 ---
 
