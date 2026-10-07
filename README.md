@@ -10,7 +10,7 @@
 ---
 
 ## 📋 Daftar Isi
-- [Latar Belakang & Deskripsi Game](#-latar-belakang--deskripsi-game)
+- [Latar Belakang & Deskripsi Game]2(#-latar-belakang--deskripsi-game)
 - [Cerita & Plot](#-cerita--plot)
 - [Gameplay](#-gameplay)
   - [Gameplay Loop](#gameplay-loop)
