@@ -1,0 +1,171 @@
+[gd_scene format=3 uid="uid://bpg0drjbf5w0n"]
+
+[ext_resource type="Script" uid="uid://drjwhmtti7g0" path="res://scripts/pause_menu.gd" id="1_nwcfo"]
+[ext_resource type="Shader" uid="uid://bfjy6t6git0ln" path="res://pause_menu.gdshader" id="2_nwcfo"]
+[ext_resource type="Texture2D" uid="uid://by1m15cj2qnw" path="res://assets/images/menu/Buttons.png" id="3_05uyy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bmmkb"]
+shader = ExtResource("2_nwcfo")
+shader_parameter/lod = 0.0
+
+[sub_resource type="FontVariation" id="FontVariation_05uyy"]
+variation_embolden = 1.35
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p81d2"]
+texture = ExtResource("3_05uyy")
+region_rect = Rect2(162, 501, 43, 13)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2nc7s"]
+texture = ExtResource("3_05uyy")
+region_rect = Rect2(162, 501, 43, 13)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d3xb4"]
+texture = ExtResource("3_05uyy")
+region_rect = Rect2(162, 501, 43, 13)
+
+[sub_resource type="Animation" id="Animation_hdmo1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nwcfo"]
+resource_name = "blur"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.87600004161]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_05uyy"]
+_data = {
+&"RESET": SubResource("Animation_hdmo1"),
+&"blur": SubResource("Animation_nwcfo")
+}
+
+[node name="PauseMenu" type="Control" unique_id=975707249]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nwcfo")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1614511908]
+process_mode = 3
+material = SubResource("ShaderMaterial_bmmkb")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 13.0
+offset_right = 2.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=243659423]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.0
+offset_top = -56.0
+offset_right = 80.0
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1135363389]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Resume" type="Button" parent="PanelContainer/VBoxContainer" unique_id=403516068]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.07450981, 0.07450981, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_05uyy")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxTexture_p81d2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2nc7s")
+theme_override_styles/hover = SubResource("StyleBoxTexture_d3xb4")
+text = "RESUME
+"
+
+[node name="Restart2" type="Button" parent="PanelContainer/VBoxContainer" unique_id=944622775]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.07450981, 0.07450981, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_05uyy")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxTexture_p81d2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2nc7s")
+theme_override_styles/hover = SubResource("StyleBoxTexture_d3xb4")
+text = "RESTART"
+
+[node name="Quit" type="Button" parent="PanelContainer/VBoxContainer" unique_id=258263778]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.07450981, 0.07450981, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_05uyy")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxTexture_p81d2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2nc7s")
+theme_override_styles/hover = SubResource("StyleBoxTexture_d3xb4")
+text = "QUIT"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=702004256]
+libraries/ = SubResource("AnimationLibrary_05uyy")
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Restart2" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

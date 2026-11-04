@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bpo3adk8jxnhy"]
+
+[ext_resource type="Script" uid="uid://c3eioy3ir1y51" path="res://scripts/rock.gd" id="1_ik6fu"]
+[ext_resource type="Texture2D" uid="uid://crspiubruyve" path="res://assets/images/Ores/stone.png" id="1_o0qsl"]
+[ext_resource type="Resource" uid="uid://bgiimcxp35s81" path="res://data/rocks/stone.tres" id="2_872ht"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cx6xl"]
+atlas = ExtResource("1_o0qsl")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cx6xl"]
+radius = 7.0
+
+[node name="Rock" type="StaticBody2D" unique_id=2042625208]
+script = ExtResource("1_ik6fu")
+data = ExtResource("2_872ht")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1852683490]
+texture = SubResource("AtlasTexture_cx6xl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1841480318]
+shape = SubResource("CircleShape2D_cx6xl")
+
+[node name="RockBreakingSound" type="AudioStreamPlayer2D" parent="." unique_id=533315492]
