@@ -212,9 +212,9 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 8
 selected = 0
 item_count = 2
-popup/item_0/text = "Windowed"
+popup/item_0/text = "Full Screen"
 popup/item_0/id = 0
-popup/item_1/text = "Full Screen"
+popup/item_1/text = "Windowed"
 popup/item_1/id = 1
 
 [node name="Button5" type="Button" parent="SettingsMenu/VBoxContainer" unique_id=1096632772]
