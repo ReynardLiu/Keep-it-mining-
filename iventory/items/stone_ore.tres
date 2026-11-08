@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://hsth2p2dai84"]
+
+[ext_resource type="Script" uid="uid://itbu02l47e7r" path="res://iventory/iventory_item.gd" id="1_x7vgx"]
+[ext_resource type="Texture2D" uid="uid://crspiubruyve" path="res://assets/images/Ores/stone.png" id="2_hbe2i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppgk2"]
+atlas = ExtResource("2_hbe2i")
+region = Rect2(0, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_x7vgx")
+name = "stone_ore"
+texture = SubResource("AtlasTexture_ppgk2")
+metadata/_custom_type_script = "uid://itbu02l47e7r"

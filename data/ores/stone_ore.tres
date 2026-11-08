@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="OreData" format=3 uid="uid://dsixhyfckrt2h"]
+
+[ext_resource type="Script" uid="uid://beksj6nhguvx5" path="res://scripts/ore_data.gd" id="1_1pas0"]
+[ext_resource type="Script" uid="uid://itbu02l47e7r" path="res://iventory/iventory_item.gd" id="1_ydtff"]
+[ext_resource type="Texture2D" uid="uid://crspiubruyve" path="res://assets/images/Ores/stone.png" id="2_xj8ag"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqfig"]
+atlas = ExtResource("2_xj8ag")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="Resource" id="Resource_f6cf6"]
+script = ExtResource("1_ydtff")
+name = "StoneOre.tres"
+texture = SubResource("AtlasTexture_dqfig")
+metadata/_custom_type_script = "uid://itbu02l47e7r"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xj8ag"]
+atlas = ExtResource("2_xj8ag")
+region = Rect2(16, 16, 16, 16)
+
+[resource]
+script = ExtResource("1_1pas0")
+name = "iron_ore"
+texture = SubResource("AtlasTexture_xj8ag")
+value = 10
+inventory_item = SubResource("Resource_f6cf6")
+metadata/_custom_type_script = "uid://beksj6nhguvx5"

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b8hvtsl8i5tqc"]
+
+[ext_resource type="Script" uid="uid://dgguac5gcv8d4" path="res://scripts/mining_mini_game.gd" id="1_p3axk"]
+[ext_resource type="Texture2D" uid="uid://ca76ec3emth8p" path="res://art/inventory_art/gemini-svg (2).svg" id="2_d0wdo"]
+
+[node name="MiningMiniGame" type="Control" unique_id=653716360]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 4.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p3axk")
+
+[node name="PickaxeBubble" type="TextureRect" parent="." unique_id=766968123]
+layout_mode = 0
+offset_top = 4.0
+offset_right = 320.0
+offset_bottom = 28.0
+texture = ExtResource("2_d0wdo")

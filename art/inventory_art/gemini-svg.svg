@@ -1,0 +1,9 @@
+<svg width="64" height="72" viewBox="0 0 16 18" xmlns="http://www.w3.org/2000/svg">
+  <!-- Border & Background Balon -->
+  <path d="M3 0h10v1h2v2h1v10h-1v2h-2v1H9v1H8v1H7v-2H3v-1H1v-2H0V3h1V1h2V0z" fill="#d0d4d8" />
+  <path d="M3 1h10v1h1v10h-1v2H9v1H8v1H7v-2H3v-2H2V2h1V1z" fill="#ffffff" />
+  <rect x="11" y="2" width="2" height="2" fill="#b8bcc0" />
+  <!-- Ikon Pickaxe -->
+  <path d="M6 3h3v1h2v1h1v2h-1v2h-1V6H9V5H6V4H5V3h1z" fill="#4a3b32" />
+  <path d="M8 6h1v1H8V6zM7 7h1v1H7V7zM6 8h1v1H6V8zM5 9h1v1H5V9zM4 10h1v1H4v-1z" fill="#3a2818" />
+</svg>

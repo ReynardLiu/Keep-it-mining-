@@ -1,0 +1,363 @@
+[gd_scene format=3 uid="uid://c7k0uqv8xy1m2"]
+
+[ext_resource type="Script" path="res://scripts/math_battle.gd" id="1_battle_script"]
+[ext_resource type="Texture2D" path="res://assets/images/battle/battle_background.png" id="2_bg"]
+[ext_resource type="Texture2D" path="res://assets/images/battle/rock_stone_battle.png" id="3_stone"]
+[ext_resource type="Texture2D" path="res://assets/images/battle/miner_battle_back.png" id="4_miner"]
+[ext_resource type="Texture2D" path="res://assets/images/battle/pickaxe_slash.png" id="5_slash"]
+[ext_resource type="Texture2D" path="res://assets/images/battle/ui_panel.png" id="6_panel"]
+[ext_resource type="AudioStream" path="res://assets/audio/encounter.wav" id="7_sfx_enc"]
+[ext_resource type="AudioStream" path="res://assets/audio/super_effective.wav" id="8_sfx_strike"]
+[ext_resource type="AudioStream" path="res://assets/audio/rock_shatter.wav" id="9_sfx_shatter"]
+[ext_resource type="AudioStream" path="res://assets/audio/miss.wav" id="10_sfx_miss"]
+[ext_resource type="AudioStream" path="res://assets/audio/select.wav" id="11_sfx_select"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hp_bg"]
+bg_color = Color(0.15, 0.15, 0.2, 0.9)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hp_fill"]
+bg_color = Color(0.29, 0.87, 0.5, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_norm"]
+bg_color = Color(0.12, 0.1, 0.2, 0.95)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.35, 0.38, 0.55, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_focus"]
+bg_color = Color(0.2, 0.18, 0.35, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.98, 0.75, 0.14, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="MathBattle" type="CanvasLayer"]
+process_mode = 3
+layer = 100
+script = ExtResource("1_battle_script")
+
+[node name="BattleContainer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="BattleContainer"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+
+[node name="EnemyArea" type="Control" parent="BattleContainer"]
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 180.0
+
+[node name="EnemySprite" type="TextureRect" parent="BattleContainer/EnemyArea"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 212.0
+offset_top = 42.0
+offset_right = 260.0
+offset_bottom = 90.0
+texture = ExtResource("3_stone")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SlashEffect" type="TextureRect" parent="BattleContainer/EnemyArea"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 220.0
+offset_top = 50.0
+offset_right = 252.0
+offset_bottom = 82.0
+texture = ExtResource("5_slash")
+expand_mode = 1
+
+[node name="EnemyCard" type="NinePatchRect" parent="BattleContainer/EnemyArea"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 175.0
+offset_top = 12.0
+offset_right = 308.0
+offset_bottom = 40.0
+texture = ExtResource("6_panel")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="NameLabel" type="Label" parent="BattleContainer/EnemyArea/EnemyCard"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 88.0
+offset_bottom = 16.0
+theme_override_font_sizes/font_size = 8
+text = "Wild Stone"
+
+[node name="LevelLabel" type="Label" parent="BattleContainer/EnemyArea/EnemyCard"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 4.0
+offset_right = 126.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(0.98, 0.75, 0.14, 1)
+theme_override_font_sizes/font_size = 8
+text = "Lv. 3"
+horizontal_alignment = 2
+
+[node name="HpLabel" type="Label" parent="BattleContainer/EnemyArea/EnemyCard"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 16.0
+offset_right = 26.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0.98, 0.75, 0.14, 1)
+theme_override_font_sizes/font_size = 7
+text = "HP"
+
+[node name="HpBar" type="ProgressBar" parent="BattleContainer/EnemyArea/EnemyCard"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 18.0
+offset_right = 126.0
+offset_bottom = 23.0
+theme_override_styles/background = SubResource("StyleBoxFlat_hp_bg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hp_fill")
+value = 100.0
+show_percentage = false
+
+[node name="PlayerArea" type="Control" parent="BattleContainer"]
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 180.0
+
+[node name="MinerSprite" type="TextureRect" parent="BattleContainer/PlayerArea"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 40.0
+offset_top = 85.0
+offset_right = 88.0
+offset_bottom = 133.0
+texture = ExtResource("4_miner")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PlayerCard" type="NinePatchRect" parent="BattleContainer/PlayerArea"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 20.0
+offset_top = 75.0
+offset_right = 135.0
+offset_bottom = 98.0
+texture = ExtResource("6_panel")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="NameLabel" type="Label" parent="BattleContainer/PlayerArea/PlayerCard"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 3.0
+offset_right = 60.0
+offset_bottom = 15.0
+theme_override_font_sizes/font_size = 8
+text = "Miner"
+
+[node name="StreakLabel" type="Label" parent="BattleContainer/PlayerArea/PlayerCard"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 3.0
+offset_right = 108.0
+offset_bottom = 15.0
+theme_override_colors/font_color = Color(0.98, 0.75, 0.14, 1)
+theme_override_font_sizes/font_size = 8
+text = "Streak: 0"
+horizontal_alignment = 2
+
+[node name="BattleBox" type="NinePatchRect" parent="BattleContainer"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -68.0
+offset_right = -5.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("6_panel")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="VBox" type="VBoxContainer" parent="BattleContainer/BattleBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 4.0
+offset_right = -6.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 2
+
+[node name="PromptLabel" type="Label" parent="BattleContainer/BattleBox/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98, 0.75, 0.14, 1)
+theme_override_font_sizes/font_size = 8
+text = "⛏️ MATH PUZZLE:"
+
+[node name="QuestionLabel" type="Label" parent="BattleContainer/BattleBox/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 9
+text = "What is 7 × 8 = ?"
+horizontal_alignment = 1
+
+[node name="ButtonGrid" type="GridContainer" parent="BattleContainer/BattleBox/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 6
+theme_override_constants/v_separation = 3
+columns = 2
+
+[node name="Btn1" type="Button" parent="BattleContainer/BattleBox/VBox/ButtonGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxFlat_btn_focus")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_focus")
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_norm")
+text = "A) 56"
+
+[node name="Btn2" type="Button" parent="BattleContainer/BattleBox/VBox/ButtonGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxFlat_btn_focus")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_focus")
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_norm")
+text = "B) 54"
+
+[node name="Btn3" type="Button" parent="BattleContainer/BattleBox/VBox/ButtonGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxFlat_btn_focus")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_focus")
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_norm")
+text = "C) 48"
+
+[node name="Btn4" type="Button" parent="BattleContainer/BattleBox/VBox/ButtonGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxFlat_btn_focus")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_focus")
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_norm")
+text = "D) 64"
+
+[node name="RetryBox" type="HBoxContainer" parent="BattleContainer/BattleBox/VBox"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="BtnRetry" type="Button" parent="BattleContainer/BattleBox/VBox/RetryBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxFlat_btn_focus")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_focus")
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_norm")
+text = "🔄 TRY AGAIN"
+
+[node name="BtnEscape" type="Button" parent="BattleContainer/BattleBox/VBox/RetryBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxFlat_btn_focus")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_focus")
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_norm")
+text = "🏃 RETREAT"
+
+[node name="TransitionBars" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="FlashOverlay" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 1)
+
+[node name="AudioEncounter" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_sfx_enc")
+volume_db = -4.0
+
+[node name="AudioStrike" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_sfx_strike")
+volume_db = -3.0
+
+[node name="AudioShatter" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_sfx_shatter")
+volume_db = -3.0
+
+[node name="AudioMiss" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_sfx_miss")
+volume_db = -4.0
+
+[node name="AudioSelect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_sfx_select")
+volume_db = -10.0

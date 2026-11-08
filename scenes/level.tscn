@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://iykwthmdk2ke"]
+
+[ext_resource type="Script" uid="uid://bcbrycnvubwe0" path="res://scripts/level.gd" id="1_ppgk2"]
+[ext_resource type="PackedScene" uid="uid://i6glrrg3rkpn" path="res://scenes/player.tscn" id="1_w7c3h"]
+[ext_resource type="PackedScene" uid="uid://88tqqawmv1lj" path="res://scenes/levels/map_1.tscn" id="1_w8frs"]
+[ext_resource type="PackedScene" uid="uid://bpo3adk8jxnhy" path="res://scenes/rock.tscn" id="2_w8frs"]
+[ext_resource type="AudioStream" uid="uid://byxx1yqu8qr0r" path="res://assets/audio/button_audio.wav" id="5_ppgk2"]
+[ext_resource type="Script" uid="uid://l4qyendxldvy" path="res://scripts/pickaxe_hit_sound.gd" id="6_2r41h"]
+
+[node name="Level" type="Node2D" unique_id=825682426]
+script = ExtResource("1_ppgk2")
+
+[node name="Map" parent="." unique_id=1003293896 instance=ExtResource("1_w8frs")]
+
+[node name="RockContainer" type="Node2D" parent="." unique_id=1694985436]
+
+[node name="Rock" parent="RockContainer" unique_id=2042625208 instance=ExtResource("2_w8frs")]
+position = Vector2(-32, 44)
+
+[node name="OreContainer" type="Node2D" parent="." unique_id=1194884830]
+
+[node name="Player" parent="." unique_id=890636134 instance=ExtResource("1_w7c3h")]
+position = Vector2(-32, 17)
+
+[node name="PickaxeHitSound" type="AudioStreamPlayer2D" parent="." unique_id=1987551855]
+stream = ExtResource("5_ppgk2")
+script = ExtResource("6_2r41h")
