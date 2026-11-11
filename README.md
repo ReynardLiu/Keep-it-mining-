@@ -42,11 +42,17 @@ Pemain berperan sebagai seorang *miner* yang menjelajahi area pertambangan bawah
 
 ## 📖 Cerita / Plot
 
-Perjalanan dimulai dari sebuah area pertambangan kecil yang terbengkalai namun menyimpan potensi kekayaan alam yang melimpah. Sebagai seorang penambang muda, kamu tertantang untuk menggali lebih dalam, memecahkan misteri di dalam tambang, serta mengumpulkan mineral berharga.
+Rahasia tambang ini adalah sistem keamanan magis kuno: kekayaan alam yang melimpah disegel oleh teka-teki matematika untuk menguji kelayakan para penambang.
+Setiap kali kamu menambang ore berharga, soal matematika berbatas waktu akan muncul. Semakin dalam kamu menggali, tantangannya melonjak drastis:
 
-Semakin dalam kamu menambang, semakin menantang medan yang dihadapi dan semakin langka *ore* yang bisa didapatkan. Tujuan utamanya adalah mengembangkan kemampuan dan peralatan tambang hingga mampu mencapai lapisan terdalam bumi untuk menemukan sumber daya paling legendaris.
-
----
+ * Eskalasi Kesulitan: Dimulai dari matematika dasar di awal permainan, perlahan berevolusi menjadi aljabar, geometri, dan probabilitas dengan batas waktu yang terus menipis.
+   
+ * Risiko Fatal: Tidak ada toleransi. Salah menjawab atau kehabisan waktu akan langsung mengurangi 1 nyawa. Jika nyawa habis, ekspedisimu gagal dan kamu terpaksa kembali ke permukaan.
+   
+Sistem Upgrade (Fokus pada Beliung):
+Karena satu-satunya alat penunjangmu hanyalah Beliung, seluruh progres bertumpu pada senjata ini. Meng-upgrade beliung tidak hanya meningkatkan daya hancur terhadap batu yang lebih keras, tetapi juga membuka efek magis penunjang logika.
+Beliung tingkat tinggi yang ditempa dengan ore langka bisa memberikan efek pasif seperti menambah ekstra detik saat soal muncul, mengeliminasi satu opsi jawaban salah, atau memiliki pelindung yang bisa menahan hilangnya 1 nyawa saat kamu melakukan kesalahan fatal.
+Menembus inti bumi kini adalah pertaruhan mutlak antara ketajaman otak dan ayunan beliungmu.
 
 ## 🎮 Gameplay
 
