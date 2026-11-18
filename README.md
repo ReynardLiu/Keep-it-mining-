@@ -39,6 +39,15 @@ Pemain berperan sebagai seorang *miner* yang menjelajahi area pertambangan bawah
 * **Target Player:** Remaja hingga dewasa, penggemar game kasual, eksplorasi, dan pengumpulan sumber daya (*resource gathering*).
 
 ---
+## Alur Cerita
+
+Permainan dimulai ketika pemain berperan sebagai seorang penambang baru yang tiba di sebuah kota terpencil dan terisolasi, di mana kehidupan warganya sangat bergantung pada tambang tua di pinggir desa. Setelah menerima *pickaxe* dasar dan arahan awal dari pandai besi setempat, pemain memulai perjalanan dengan turun ke lapisan tambang paling dangkal untuk mencari mineral pertama.
+
+Di dalam lorong tambang yang gelap, pemain berkeliling mencari bongkahan ore. Setiap kali pemain mengayunkan pickaxe untuk menambang suatu ore, segel kuno pada mineral tersebut akan aktif dan memunculkan sebuah tantangan soal di layar yang tingkat kesulitannya sebanding dengan kelangkaan ore tersebut, mulai dari hitungan sederhana pada batuan biasa, hingga teka-teki logika atau operasi rumit berbatas waktu pada kristal langka. Jika pemain berhasil menjawab dengan benar, ore akan hancur dengan sempurna dapat dikumpulkan, sedangkan jawaban yang salah akan mengurangi nyawa penambang.
+
+Setelah oksigen sudah menipis, pemain harus kembali ke permukaan kota sebelum terjebak di kegelapan goa. Di kota, pemain menjual seluruh hasil tambang kepada pedagang mineral untuk mengumpulkan uang, lalu menggunakannya di bengkel untuk meng-upgrade kekuatan pickaxe dan menambah jumlah nyawa.
+
+Dengan peralatan yang semakin kuat, pemain dapat menembus lapisan tambang yang lebih dalam dan berbahaya untuk memburu ore legendaris yang bernilai sangat tinggi. Seiring berjalannya waktu, uang dan material langka yang dikumpulkan pemain tidak hanya memperkuat karakter, tetapi juga digunakan untuk memulihkan fasilitas kota yang rusak hingga akhirnya membuka kembali jalur penghubung kota terpencil tersebut dengan dunia luar.
 
 ## 📖 Cerita / Plot
 
