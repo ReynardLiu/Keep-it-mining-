@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="RockData" format=3 uid="uid://dyqc6nnl5a730"]
+
+[ext_resource type="Script" uid="uid://bs4j6h6r51arf" path="res://scripts/rock_data.gd" id="1_rock_script"]
+[ext_resource type="Resource" uid="uid://bx4a8xgroru5f" path="res://data/ores/coal_ore.tres" id="2_ore_res"]
+[ext_resource type="Texture2D" uid="uid://cttflbcdqvaqa" path="res://assets/images/Ores/coal.png" id="3_rock_tex"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rock"]
+atlas = ExtResource("3_rock_tex")
+region = Rect2(32, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_rock_script")
+texture = SubResource("AtlasTexture_rock")
+max_health = 3
+rarity = 20
+min_depth = 1
+ore_resource = ExtResource("2_ore_res")

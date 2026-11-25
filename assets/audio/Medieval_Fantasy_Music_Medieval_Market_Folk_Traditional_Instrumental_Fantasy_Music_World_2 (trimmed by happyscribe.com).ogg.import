@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bqmp34yn23kwo"
+path="res://.godot/imported/Medieval_Fantasy_Music_Medieval_Market_Folk_Traditional_Instrumental_Fantasy_Music_World_2 (trimmed by happyscribe.com).ogg-c002e64714e0b620bc6b538ba2d1ac24.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/Medieval_Fantasy_Music_Medieval_Market_Folk_Traditional_Instrumental_Fantasy_Music_World_2 (trimmed by happyscribe.com).ogg"
+dest_files=["res://.godot/imported/Medieval_Fantasy_Music_Medieval_Market_Folk_Traditional_Instrumental_Fantasy_Music_World_2 (trimmed by happyscribe.com).ogg-c002e64714e0b620bc6b538ba2d1ac24.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

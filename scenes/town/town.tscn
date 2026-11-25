@@ -1,0 +1,2188 @@
+[gd_scene format=4 uid="uid://dmj67k18vp4re"]
+
+[ext_resource type="Script" uid="uid://b6ewbs4sybftl" path="res://scripts/town.gd" id="1_town_script"]
+[ext_resource type="Texture2D" uid="uid://cu8i0whxjuy4f" path="res://assets/images/new_town/townRoad.png" id="2_n51ow"]
+[ext_resource type="PackedScene" uid="uid://i6glrrg3rkpn" path="res://scenes/player.tscn" id="2_player"]
+[ext_resource type="Texture2D" uid="uid://comhl8v7samxe" path="res://assets/images/cute_fantasy/Tiles/Grass_Middle.png" id="3_grass"]
+[ext_resource type="Texture2D" uid="uid://bco2kd4uujqul" path="res://assets/images/new_town/new_town.png" id="4_67633"]
+[ext_resource type="Texture2D" uid="uid://b32rjwlr7wemu" path="res://assets/images/cute_fantasy/Tiles/Path_Middle.png" id="4_path"]
+[ext_resource type="Texture2D" uid="uid://ctu76eeplnh7b" path="res://assets/images/cute_fantasy/Outdoor decoration/Oak_Tree.png" id="6_oak_tree"]
+[ext_resource type="Texture2D" uid="uid://0h3ew0nm8grg" path="res://assets/images/cute_fantasy/Outdoor decoration/Oak_Tree_Small.png" id="7_oak_small"]
+[ext_resource type="Texture2D" uid="uid://uhcygy0o370e" path="res://assets/images/cute_fantasy/Tiles/FarmLand_Tile.png" id="9_farmland"]
+[ext_resource type="Texture2D" uid="uid://ctni7ii8s0ptg" path="res://assets/images/cute_fantasy/Animals/Chicken/Chicken.png" id="10_chicken"]
+[ext_resource type="Texture2D" uid="uid://bx7uch282r5rm" path="res://assets/images/cute_fantasy/Animals/Cow/Cow.png" id="11_cow"]
+[ext_resource type="Texture2D" uid="uid://yvgwwovv3pth" path="res://assets/images/cute_fantasy/Animals/Pig/Pig.png" id="12_pig"]
+[ext_resource type="Texture2D" uid="uid://b213hbm0seilx" path="res://assets/images/cute_fantasy/Animals/Sheep/Sheep.png" id="13_sheep"]
+[ext_resource type="Texture2D" uid="uid://jny20u5xaxhp" path="res://assets/images/minifolks/MinifolksVillagers/Outline/MiniNobleMan.png" id="17_npc_mayor"]
+[ext_resource type="Texture2D" uid="uid://b0w2gsjsjk1u0" path="res://assets/images/minifolks/MinifolksVillagers/Outline/MiniWorker.png" id="19_npc_worker"]
+[ext_resource type="Texture2D" uid="uid://dm10xmn3bp144" path="res://assets/images/minifolks/MinifolksVillagers/Outline/MiniOldMan.png" id="20_npc_elder"]
+[ext_resource type="Texture2D" uid="uid://kcg2ul7omway" path="res://assets/images/minifolks/MinifolksVillagers/Outline/MiniOldWoman.png" id="21_npc_herbalist"]
+[ext_resource type="Texture2D" uid="uid://diw355xe52fgp" path="res://assets/images/minifolks/MinifolksVillagers/Outline/MiniPeasant.png" id="22_npc_farmer"]
+[ext_resource type="AudioStream" uid="uid://8nkvnp3fvilx" path="res://assets/audio/coin.wav" id="24_sfx_coin"]
+[ext_resource type="AudioStream" uid="uid://bwijyinfl1oq1" path="res://assets/audio/special_unlocked.wav" id="25_sfx_fanfare"]
+[ext_resource type="AudioStream" uid="uid://bbsmru7f4oycr" path="res://assets/audio/quest_complete.wav" id="26_sfx_quest"]
+[ext_resource type="Script" uid="uid://dt2qr2ett1gr1" path="res://scripts/farm_animal.gd" id="27_farm_animal"]
+[ext_resource type="Texture2D" uid="uid://4s8mxh3v7ysw" path="res://assets/images/ui/UiCozyFree.png" id="28_ui_cozy"]
+[ext_resource type="PackedScene" uid="uid://bpg0drjbf5w0n" path="res://scenes/ui/pause_menu.tscn" id="29_67633"]
+[ext_resource type="Texture2D" uid="uid://cvfys1wq48nyu" path="res://assets/images/hud/item_bandage.png" id="29_bandage"]
+[ext_resource type="Texture2D" uid="uid://dk22m8r2rm7k0" path="res://assets/images/hud/item_medkit.png" id="30_medkit"]
+[ext_resource type="Texture2D" uid="uid://de86ml24mivac" path="res://assets/images/hud/item_elixir.png" id="31_elixir"]
+[ext_resource type="Texture2D" uid="uid://dl466781niehc" path="res://assets/images/hud/anvil_craft.png" id="32_anvil"]
+[ext_resource type="AudioStream" uid="uid://dsifatxxp1q32" path="res://assets/audio/wayfarers-town-fantasy-town-music_6fDhqbqU.ogg" id="33_4axs1"]
+[ext_resource type="Script" uid="uid://quwv5biodvxu" path="res://scripts/town_back_sound.gd" id="33_n51ow"]
+[ext_resource type="Texture2D" uid="uid://d0t6xfdbw6mrf" path="res://assets/images/hud/pickaxe_stone.png" id="33_pickaxe_stone"]
+[ext_resource type="Texture2D" uid="uid://cqh45861u7cfw" path="res://assets/images/minifolks/MinifolksVillagers/Outline/MiniVillagerWoman.png" id="34_npc_villager_woman"]
+[ext_resource type="AudioStream" uid="uid://bqmp34yn23kwo" path="res://assets/audio/Medieval_Fantasy_Music_Medieval_Market_Folk_Traditional_Instrumental_Fantasy_Music_World_2 (trimmed by happyscribe.com).ogg" id="35_h8fnw"]
+[ext_resource type="Texture2D" uid="uid://dvodn6omdaxt5" path="res://assets/images/minifolks/MinifolksVillagers/Outline/MiniVillagerMan.png" id="35_npc_villager_man"]
+[ext_resource type="Script" uid="uid://jomns4vlehy4" path="res://scripts/shop_back_sound.gd" id="35_sv8qu"]
+[ext_resource type="Texture2D" uid="uid://disrseggx58hn" path="res://assets/images/minifolks/MinifolksVillagers/Outline/MiniNobleWoman.png" id="36_npc_noble_woman"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8m86"]
+atlas = ExtResource("2_n51ow")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpyeh"]
+atlas = ExtResource("4_67633")
+region = Rect2(85, 242, 94, 98)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_house_large"]
+size = Vector2(95, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chyfb"]
+atlas = ExtResource("4_67633")
+region = Rect2(258, 262, 72, 76)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_house_small"]
+size = Vector2(80.36769, 51.764694)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j06xg"]
+atlas = ExtResource("4_67633")
+region = Rect2(9, 246, 68, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6je5"]
+atlas = ExtResource("4_67633")
+region = Rect2(187, 268, 67, 70)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fence_h"]
+size = Vector2(155, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fence_v"]
+size = Vector2(6, 34.75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n51ow"]
+atlas = ExtResource("4_67633")
+region = Rect2(376, 186, 69, 48)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_deco_rock"]
+radius = 9.219544
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgueu"]
+atlas = ExtResource("4_67633")
+region = Rect2(256, 206, 46, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qmit"]
+atlas = ExtResource("4_67633")
+region = Rect2(305, 190, 21, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_klqmq"]
+atlas = ExtResource("4_67633")
+region = Rect2(403, 365, 35, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8fnw"]
+atlas = ExtResource("4_67633")
+region = Rect2(331, 212, 41, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4axs1"]
+atlas = ExtResource("4_67633")
+region = Rect2(450, 190, 44, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fei7j"]
+atlas = ExtResource("4_67633")
+region = Rect2(355, 114, 87, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sv8qu"]
+atlas = ExtResource("4_67633")
+region = Rect2(330, 190, 42, 18)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tree_trunk"]
+radius = 9.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_boundary_h"]
+size = Vector2(421, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_boundary_v"]
+size = Vector2(17, 146.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hvcg"]
+atlas = ExtResource("4_67633")
+region = Rect2(415, 249, 85, 89)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mine"]
+size = Vector2(71, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n51ow"]
+size = Vector2(58.98014, 36.350616)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_npc_body"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_npc_area"]
+radius = 24.083189
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_67633"]
+texture = ExtResource("4_67633")
+margins = Vector2i(3, 3)
+texture_region_size = Vector2i(8, 8)
+21:44/size_in_atlas = Vector2i(5, 4)
+21:44/0 = 0
+26:43/size_in_atlas = Vector2i(5, 8)
+26:43/0 = 0
+31:45/size_in_atlas = Vector2i(2, 2)
+31:45/0 = 0
+31:47/size_in_atlas = Vector2i(2, 3)
+31:47/0 = 0
+33:45/size_in_atlas = Vector2i(2, 3)
+33:45/0 = 0
+35:44/size_in_atlas = Vector2i(3, 4)
+35:44/0 = 0
+35:48/size_in_atlas = Vector2i(3, 3)
+35:48/0 = 0
+38:44/size_in_atlas = Vector2i(3, 4)
+38:44/0 = 0
+38:48/size_in_atlas = Vector2i(3, 3)
+38:48/0 = 0
+41:44/size_in_atlas = Vector2i(8, 7)
+41:44/0 = 0
+49:44/size_in_atlas = Vector2i(6, 7)
+49:44/0 = 0
+55:44/size_in_atlas = Vector2i(6, 4)
+55:44/0 = 0
+15:44/size_in_atlas = Vector2i(6, 5)
+15:44/0 = 0
+6:46/0 = 0
+11:44/size_in_atlas = Vector2i(2, 2)
+11:44/0 = 0
+1:44/size_in_atlas = Vector2i(1, 6)
+1:44/0 = 0
+13:44/size_in_atlas = Vector2i(2, 2)
+13:44/0 = 0
+14:46/size_in_atlas = Vector2i(1, 4)
+14:46/0 = 0
+14:50/0 = 0
+9:44/size_in_atlas = Vector2i(1, 2)
+9:44/0 = 0
+8:44/size_in_atlas = Vector2i(1, 2)
+8:44/0 = 0
+10:44/size_in_atlas = Vector2i(1, 2)
+10:44/0 = 0
+7:44/size_in_atlas = Vector2i(1, 2)
+7:44/0 = 0
+6:44/size_in_atlas = Vector2i(1, 2)
+6:44/0 = 0
+5:44/size_in_atlas = Vector2i(1, 2)
+5:44/0 = 0
+44:13/size_in_atlas = Vector2i(11, 7)
+44:13/0 = 0
+56:10/size_in_atlas = Vector2i(5, 11)
+56:10/0 = 0
+21:16/size_in_atlas = Vector2i(12, 4)
+21:16/0 = 0
+33:16/size_in_atlas = Vector2i(3, 4)
+33:16/0 = 0
+36:16/size_in_atlas = Vector2i(1, 4)
+36:16/0 = 0
+19:16/size_in_atlas = Vector2i(2, 4)
+19:16/0 = 0
+19:13/size_in_atlas = Vector2i(2, 3)
+19:13/0 = 0
+13:13/size_in_atlas = Vector2i(2, 7)
+13:13/0 = 0
+16:13/size_in_atlas = Vector2i(2, 7)
+16:13/0 = 0
+1:18/size_in_atlas = Vector2i(1, 2)
+1:18/0 = 0
+2:18/size_in_atlas = Vector2i(1, 2)
+2:18/0 = 0
+11:18/size_in_atlas = Vector2i(1, 2)
+11:18/0 = 0
+1:13/size_in_atlas = Vector2i(3, 2)
+1:13/0 = 0
+4:13/size_in_atlas = Vector2i(2, 2)
+4:13/0 = 0
+6:13/size_in_atlas = Vector2i(1, 2)
+6:13/0 = 0
+7:13/size_in_atlas = Vector2i(5, 2)
+7:13/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_fei7j"]
+tile_size = Vector2i(8, 8)
+sources/0 = SubResource("TileSetAtlasSource_67633")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_terraria_bg"]
+content_margin_left = 6.0
+content_margin_top = 5.0
+content_margin_right = 6.0
+content_margin_bottom = 5.0
+bg_color = Color(0.14, 0.17, 0.33, 0.96)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.06, 0.08, 0.16, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_avatar_box"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.08, 0.1, 0.22, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.24, 0.3, 0.52, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bubble_box"]
+content_margin_left = 6.0
+content_margin_top = 5.0
+content_margin_right = 6.0
+content_margin_bottom = 5.0
+bg_color = Color(0.07, 0.09, 0.2, 0.92)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.18, 0.24, 0.42, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_terraria_btn_close"]
+bg_color = Color(0.68, 0.15, 0.15, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4, 0.08, 0.08, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_terraria_btn_talk"]
+bg_color = Color(0.22, 0.35, 0.65, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.12, 0.2, 0.42, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_terraria_btn_action"]
+bg_color = Color(0.18, 0.26, 0.48, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.3, 0.4, 0.68, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_green"]
+bg_color = Color(0.1, 0.38, 0.15, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.85, 0.72, 0.2, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cozy_town_panel"]
+atlas = ExtResource("28_ui_cozy")
+region = Rect2(8, 167, 86, 79)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_close"]
+bg_color = Color(0.2, 0.18, 0.25, 0.95)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.5, 0.45, 0.6, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_card_bg"]
+bg_color = Color(0.18, 0.14, 0.1, 0.9)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.45, 0.35, 0.22, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_wood"]
+bg_color = Color(0.24, 0.15, 0.09, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.78, 0.58, 0.2, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_craft"]
+bg_color = Color(0.15, 0.38, 0.72, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.38, 0.65, 0.98, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="Town" type="Node2D" unique_id=727326044]
+y_sort_enabled = true
+script = ExtResource("1_town_script")
+
+[node name="townRoadGround" type="TextureRect" parent="." unique_id=262844028]
+z_index = -10
+texture_filter = 1
+offset_left = -324.0
+offset_top = -148.0
+offset_right = 344.0
+offset_bottom = 225.0
+texture = SubResource("AtlasTexture_b8m86")
+stretch_mode = 1
+
+[node name="GroundBackdrop" type="TextureRect" parent="." unique_id=1876386898]
+z_index = -10
+texture_filter = 1
+offset_left = -485.0
+offset_top = -290.0
+offset_right = 469.0
+offset_bottom = 289.0
+texture = ExtResource("3_grass")
+stretch_mode = 1
+
+[node name="Paths" type="Node2D" parent="." unique_id=2042112178]
+visible = false
+z_index = -5
+
+[node name="MainSquarePath" type="TextureRect" parent="Paths" unique_id=1866324536]
+texture_filter = 1
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
+texture = ExtResource("4_path")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="NorthHallPath" type="TextureRect" parent="Paths" unique_id=178954764]
+texture_filter = 1
+offset_left = -25.0
+offset_top = -90.0
+offset_right = 25.0
+offset_bottom = -50.0
+texture = ExtResource("4_path")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="WestForgePath" type="TextureRect" parent="Paths" unique_id=317163952]
+texture_filter = 1
+offset_left = -160.0
+offset_top = 15.0
+offset_right = -50.0
+offset_bottom = 55.0
+texture = ExtResource("4_path")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="HerbalistPath" type="TextureRect" parent="Paths" unique_id=1946557514]
+texture_filter = 1
+offset_left = -140.0
+offset_top = 45.0
+offset_right = -80.0
+offset_bottom = 140.0
+texture = ExtResource("4_path")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="SouthFarmPath" type="TextureRect" parent="Paths" unique_id=78798329]
+texture_filter = 1
+offset_left = 10.0
+offset_top = 58.0
+offset_right = 70.0
+offset_bottom = 98.0
+texture = ExtResource("4_path")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="EastMinePath" type="TextureRect" parent="Paths" unique_id=162687171]
+texture_filter = 1
+offset_left = 50.0
+offset_top = 15.0
+offset_right = 280.0
+offset_bottom = 55.0
+texture = ExtResource("4_path")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Buildings" type="Node2D" parent="." unique_id=743620085]
+z_index = -2
+y_sort_enabled = true
+
+[node name="TownHall" type="StaticBody2D" parent="Buildings" unique_id=1510197173]
+position = Vector2(0, -90)
+
+[node name="Sprite2D" type="Sprite2D" parent="Buildings/TownHall" unique_id=1032985156]
+texture_filter = 1
+position = Vector2(6, 11.000002)
+scale = Vector2(1.1702127, 1.1326532)
+texture = SubResource("AtlasTexture_cpyeh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buildings/TownHall" unique_id=279198364]
+position = Vector2(10.5, 27)
+shape = SubResource("RectangleShape2D_house_large")
+
+[node name="MerchantPost" type="StaticBody2D" parent="Buildings" unique_id=953090785]
+position = Vector2(160.99998, -67.99999)
+scale = Vector2(0.85, 0.85)
+
+[node name="Sprite2D" type="Sprite2D" parent="Buildings/MerchantPost" unique_id=1355153673]
+texture_filter = 1
+position = Vector2(5.8823557, -10.411772)
+scale = Vector2(1.3398691, 1.2739938)
+texture = SubResource("AtlasTexture_chyfb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buildings/MerchantPost" unique_id=204121270]
+position = Vector2(11.764706, -11.764707)
+scale = Vector2(1.0000002, 1.0000002)
+shape = SubResource("RectangleShape2D_house_small")
+
+[node name="BlacksmithShop" type="StaticBody2D" parent="Buildings" unique_id=1192317528]
+position = Vector2(-127.99999, -54.999996)
+scale = Vector2(0.85, 0.85)
+
+[node name="Sprite2D" type="Sprite2D" parent="Buildings/BlacksmithShop" unique_id=1175929201]
+texture_filter = 1
+position = Vector2(-38.23529, -13.242645)
+scale = Vector2(1.4013841, 1.3994254)
+texture = SubResource("AtlasTexture_j06xg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buildings/BlacksmithShop" unique_id=1701284854]
+position = Vector2(-32.94118, 10.588231)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_house_small")
+
+[node name="HerbalistCottage" type="StaticBody2D" parent="Buildings" unique_id=860098799]
+position = Vector2(-188.99997, 46.999985)
+scale = Vector2(0.85, 0.85)
+
+[node name="Sprite2D" type="Sprite2D" parent="Buildings/HerbalistCottage" unique_id=1024152624]
+texture_filter = 1
+position = Vector2(3.5293617, -15.29409)
+scale = Vector2(1.3955234, 1.3571426)
+texture = SubResource("AtlasTexture_g6je5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buildings/HerbalistCottage" unique_id=1772690978]
+position = Vector2(-2.3529816, -1.1764507)
+rotation = -0.6667158
+scale = Vector2(1.0000002, 1.0000002)
+shape = SubResource("RectangleShape2D_house_small")
+
+[node name="FarmPasture" type="Node2D" parent="." unique_id=96946159]
+y_sort_enabled = true
+position = Vector2(-142, 120)
+
+[node name="Farmland" type="TextureRect" parent="FarmPasture" unique_id=1255627943]
+visible = false
+z_index = -1
+texture_filter = 1
+offset_left = -48.0
+offset_top = -32.0
+offset_right = 48.0
+offset_bottom = 32.0
+texture = ExtResource("9_farmland")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="FenceColliders" type="StaticBody2D" parent="FarmPasture" unique_id=1606969260]
+position = Vector2(3, 3)
+
+[node name="WallTop" type="CollisionShape2D" parent="FarmPasture/FenceColliders" unique_id=2016532360]
+position = Vector2(-0.5, -39)
+shape = SubResource("RectangleShape2D_fence_h")
+
+[node name="WallBottom" type="CollisionShape2D" parent="FarmPasture/FenceColliders" unique_id=1644860815]
+position = Vector2(0, 41)
+shape = SubResource("RectangleShape2D_fence_h")
+
+[node name="WallLeft" type="CollisionShape2D" parent="FarmPasture/FenceColliders" unique_id=862478275]
+position = Vector2(-76, -16)
+shape = SubResource("RectangleShape2D_fence_v")
+
+[node name="WallLeft2" type="CollisionShape2D" parent="FarmPasture/FenceColliders" unique_id=1304734915]
+position = Vector2(-76, 18)
+shape = SubResource("RectangleShape2D_fence_v")
+
+[node name="WallRight2" type="CollisionShape2D" parent="FarmPasture/FenceColliders" unique_id=2032717123]
+position = Vector2(76, -25)
+shape = SubResource("RectangleShape2D_fence_v")
+
+[node name="WallRight" type="CollisionShape2D" parent="FarmPasture/FenceColliders" unique_id=1193085687]
+position = Vector2(76, 28)
+shape = SubResource("RectangleShape2D_fence_v")
+
+[node name="Animal" type="Node2D" parent="." unique_id=1480095185]
+
+[node name="Chicken" type="Sprite2D" parent="Animal" unique_id=904855588]
+texture_filter = 1
+position = Vector2(-25, 121)
+texture = ExtResource("10_chicken")
+hframes = 2
+vframes = 2
+script = ExtResource("27_farm_animal")
+
+[node name="Cow" type="Sprite2D" parent="Animal" unique_id=244079324]
+texture_filter = 1
+position = Vector2(-34, 60)
+texture = ExtResource("11_cow")
+hframes = 2
+vframes = 2
+script = ExtResource("27_farm_animal")
+
+[node name="Pig" type="Sprite2D" parent="Animal" unique_id=1860082418]
+texture_filter = 1
+position = Vector2(-121, 29)
+texture = ExtResource("12_pig")
+hframes = 2
+vframes = 2
+script = ExtResource("27_farm_animal")
+
+[node name="Sheep" type="Sprite2D" parent="Animal" unique_id=875219386]
+texture_filter = 1
+position = Vector2(46, 112)
+texture = ExtResource("13_sheep")
+hframes = 2
+vframes = 2
+script = ExtResource("27_farm_animal")
+
+[node name="DecorativeItem" type="Node2D" parent="." unique_id=784907326]
+y_sort_enabled = true
+
+[node name="RockDeco" type="StaticBody2D" parent="DecorativeItem" unique_id=326171056]
+position = Vector2(166, 82)
+
+[node name="Sprite2D" type="Sprite2D" parent="DecorativeItem/RockDeco" unique_id=472409972]
+texture_filter = 1
+position = Vector2(-9, -5)
+texture = SubResource("AtlasTexture_n51ow")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="DecorativeItem/RockDeco" unique_id=1876846631]
+position = Vector2(12, 0)
+shape = SubResource("CircleShape2D_deco_rock")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DecorativeItem/RockDeco" unique_id=1737683424]
+position = Vector2(7, -11)
+shape = SubResource("CircleShape2D_deco_rock")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DecorativeItem/RockDeco" unique_id=781157819]
+position = Vector2(-6, -3)
+shape = SubResource("CircleShape2D_deco_rock")
+
+[node name="BushDeco" type="StaticBody2D" parent="DecorativeItem" unique_id=463539562]
+position = Vector2(55, 10)
+
+[node name="Sprite2D" type="Sprite2D" parent="DecorativeItem/BushDeco" unique_id=1633038771]
+texture_filter = 1
+texture = SubResource("AtlasTexture_lgueu")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DecorativeItem/BushDeco" unique_id=1032241341]
+position = Vector2(11, 1)
+shape = SubResource("CircleShape2D_deco_rock")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DecorativeItem/BushDeco" unique_id=1984617956]
+position = Vector2(-12, 3)
+shape = SubResource("CircleShape2D_deco_rock")
+
+[node name="BushDeco2" type="StaticBody2D" parent="DecorativeItem" unique_id=1492825473]
+position = Vector2(-20, 10)
+
+[node name="Sprite2D" type="Sprite2D" parent="DecorativeItem/BushDeco2" unique_id=1605996777]
+texture_filter = 1
+texture = SubResource("AtlasTexture_8qmit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DecorativeItem/BushDeco2" unique_id=844164336]
+shape = SubResource("CircleShape2D_deco_rock")
+
+[node name="WellDeco" type="StaticBody2D" parent="DecorativeItem" unique_id=1951867678]
+position = Vector2(10, 45)
+
+[node name="Sprite2D" type="Sprite2D" parent="DecorativeItem/WellDeco" unique_id=1227322664]
+texture_filter = 1
+texture = SubResource("AtlasTexture_klqmq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DecorativeItem/WellDeco" unique_id=342210629]
+position = Vector2(7, 12)
+shape = SubResource("CircleShape2D_deco_rock")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DecorativeItem/WellDeco" unique_id=1730334835]
+position = Vector2(-7, 12)
+shape = SubResource("CircleShape2D_deco_rock")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="DecorativeItem/WellDeco" unique_id=2016873953]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_deco_rock")
+
+[node name="FlowerDeco" type="StaticBody2D" parent="DecorativeItem" unique_id=1348597822]
+position = Vector2(-44, -17)
+
+[node name="Sprite2D" type="Sprite2D" parent="DecorativeItem/FlowerDeco" unique_id=1614614921]
+texture_filter = 1
+texture = SubResource("AtlasTexture_h8fnw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DecorativeItem/FlowerDeco" unique_id=680435774]
+position = Vector2(-66, -9)
+shape = SubResource("CircleShape2D_deco_rock")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="DecorativeItem/FlowerDeco" unique_id=181935336]
+position = Vector2(-15, -47)
+shape = SubResource("CircleShape2D_deco_rock")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DecorativeItem/FlowerDeco" unique_id=10310357]
+position = Vector2(-66, -18)
+shape = SubResource("CircleShape2D_deco_rock")
+
+[node name="RockDeco2" type="StaticBody2D" parent="DecorativeItem" unique_id=654836165]
+position = Vector2(214, 75)
+
+[node name="Sprite2D" type="Sprite2D" parent="DecorativeItem/RockDeco2" unique_id=1433974707]
+texture_filter = 1
+texture = SubResource("AtlasTexture_4axs1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DecorativeItem/RockDeco2" unique_id=343830863]
+position = Vector2(12, 6)
+shape = SubResource("CircleShape2D_deco_rock")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="DecorativeItem/RockDeco2" unique_id=1928223285]
+position = Vector2(5, -8)
+shape = SubResource("CircleShape2D_deco_rock")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="DecorativeItem/RockDeco2" unique_id=2103360758]
+position = Vector2(-7, 7)
+shape = SubResource("CircleShape2D_deco_rock")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DecorativeItem/RockDeco2" unique_id=1782245904]
+position = Vector2(-13, -7)
+shape = SubResource("CircleShape2D_deco_rock")
+
+[node name="MainGate" type="StaticBody2D" parent="DecorativeItem" unique_id=272043060]
+position = Vector2(31, 154)
+
+[node name="Sprite2D" type="Sprite2D" parent="DecorativeItem/MainGate" unique_id=61648776]
+texture_filter = 1
+position = Vector2(-21.500002, 16)
+scale = Vector2(1.0229884, 1)
+texture = SubResource("AtlasTexture_fei7j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DecorativeItem/MainGate" unique_id=1620184253]
+position = Vector2(-22, 28)
+shape = SubResource("CircleShape2D_deco_rock")
+
+[node name="FlowerDeco2" type="StaticBody2D" parent="DecorativeItem" unique_id=1351887311]
+position = Vector2(50, -15)
+
+[node name="Sprite2D" type="Sprite2D" parent="DecorativeItem/FlowerDeco2" unique_id=511258058]
+texture_filter = 1
+texture = SubResource("AtlasTexture_sv8qu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DecorativeItem/FlowerDeco2" unique_id=1765263576]
+position = Vector2(23, -23)
+shape = SubResource("CircleShape2D_deco_rock")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DecorativeItem/FlowerDeco2" unique_id=767536459]
+position = Vector2(25, -42)
+shape = SubResource("CircleShape2D_deco_rock")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="DecorativeItem/FlowerDeco2" unique_id=1154797047]
+position = Vector2(30, -31)
+shape = SubResource("CircleShape2D_deco_rock")
+
+[node name="TreesAndProps" type="Node2D" parent="." unique_id=2117780724]
+visible = false
+y_sort_enabled = true
+
+[node name="Tree1" type="StaticBody2D" parent="TreesAndProps" unique_id=1501592908]
+position = Vector2(-200, -140)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreesAndProps/Tree1" unique_id=1567175642]
+texture_filter = 1
+texture = ExtResource("6_oak_tree")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreesAndProps/Tree1" unique_id=1652958289]
+position = Vector2(1, 14)
+shape = SubResource("CircleShape2D_tree_trunk")
+
+[node name="Tree2" type="StaticBody2D" parent="TreesAndProps" unique_id=909440319]
+position = Vector2(249, 127.75)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreesAndProps/Tree2" unique_id=195070870]
+texture_filter = 1
+texture = ExtResource("6_oak_tree")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreesAndProps/Tree2" unique_id=1702075089]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_tree_trunk")
+
+[node name="Tree3" type="StaticBody2D" parent="TreesAndProps" unique_id=1911339519]
+position = Vector2(-200, 180)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreesAndProps/Tree3" unique_id=634006221]
+texture_filter = 1
+texture = ExtResource("6_oak_tree")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreesAndProps/Tree3" unique_id=524195845]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_tree_trunk")
+
+[node name="Tree4" type="StaticBody2D" parent="TreesAndProps" unique_id=481332551]
+position = Vector2(180, -140)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreesAndProps/Tree4" unique_id=595803687]
+texture_filter = 1
+texture = ExtResource("6_oak_tree")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreesAndProps/Tree4" unique_id=194845393]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_tree_trunk")
+
+[node name="Tree5" type="Sprite2D" parent="TreesAndProps" unique_id=574744678]
+texture_filter = 1
+position = Vector2(250, -90)
+texture = ExtResource("7_oak_small")
+
+[node name="Tree6" type="StaticBody2D" parent="TreesAndProps" unique_id=645416340]
+position = Vector2(170, 150)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreesAndProps/Tree6" unique_id=169214583]
+texture_filter = 1
+texture = ExtResource("6_oak_tree")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreesAndProps/Tree6" unique_id=517359047]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_tree_trunk")
+
+[node name="Tree7" type="Sprite2D" parent="TreesAndProps" unique_id=116120396]
+texture_filter = 1
+position = Vector2(-80, 200)
+texture = ExtResource("7_oak_small")
+
+[node name="TreeMine1" type="StaticBody2D" parent="TreesAndProps" unique_id=1738004022]
+position = Vector2(244, -128)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreesAndProps/TreeMine1" unique_id=980396630]
+texture_filter = 1
+texture = ExtResource("6_oak_tree")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreesAndProps/TreeMine1" unique_id=1749564430]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_tree_trunk")
+
+[node name="TreeMine2" type="StaticBody2D" parent="TreesAndProps" unique_id=1798927369]
+position = Vector2(310, 45)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreesAndProps/TreeMine2" unique_id=1048744599]
+texture_filter = 1
+texture = ExtResource("6_oak_tree")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreesAndProps/TreeMine2" unique_id=1426553541]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_tree_trunk")
+
+[node name="Tree8" type="Sprite2D" parent="TreesAndProps" unique_id=1206262470]
+texture_filter = 1
+position = Vector2(320, -110)
+texture = ExtResource("7_oak_small")
+
+[node name="Tree9" type="StaticBody2D" parent="TreesAndProps" unique_id=1878954270]
+position = Vector2(-75, -170)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreesAndProps/Tree9" unique_id=554533889]
+texture_filter = 1
+texture = ExtResource("6_oak_tree")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreesAndProps/Tree9" unique_id=74946008]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_tree_trunk")
+
+[node name="Tree10" type="StaticBody2D" parent="TreesAndProps" unique_id=1386971597]
+position = Vector2(75, -170)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreesAndProps/Tree10" unique_id=1240106835]
+texture_filter = 1
+texture = ExtResource("6_oak_tree")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreesAndProps/Tree10" unique_id=145461634]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_tree_trunk")
+
+[node name="TreeHallLeft" type="StaticBody2D" parent="TreesAndProps" unique_id=93643494]
+position = Vector2(-80, -100)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreesAndProps/TreeHallLeft" unique_id=103720923]
+texture_filter = 1
+position = Vector2(-55, -36)
+texture = ExtResource("6_oak_tree")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreesAndProps/TreeHallLeft" unique_id=1879076611]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_tree_trunk")
+
+[node name="TreeHallRight" type="StaticBody2D" parent="TreesAndProps" unique_id=1618413892]
+position = Vector2(152, 57)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreesAndProps/TreeHallRight" unique_id=1593435221]
+texture_filter = 1
+texture = ExtResource("6_oak_tree")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreesAndProps/TreeHallRight" unique_id=1441086082]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_tree_trunk")
+
+[node name="TreeHallGardenL" type="Sprite2D" parent="TreesAndProps" unique_id=394653040]
+texture_filter = 1
+position = Vector2(-198, -60)
+texture = ExtResource("7_oak_small")
+
+[node name="TreeHallGardenR" type="Sprite2D" parent="TreesAndProps" unique_id=921287890]
+texture_filter = 1
+position = Vector2(108, -119)
+texture = ExtResource("7_oak_small")
+
+[node name="TreeHallBack" type="StaticBody2D" parent="TreesAndProps" unique_id=848128720]
+position = Vector2(0, -185)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreesAndProps/TreeHallBack" unique_id=6350295]
+texture_filter = 1
+texture = ExtResource("6_oak_tree")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreesAndProps/TreeHallBack" unique_id=2083996247]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_tree_trunk")
+
+[node name="TownBoundaries" type="StaticBody2D" parent="." unique_id=1099839877]
+
+[node name="WallNorth" type="CollisionShape2D" parent="TownBoundaries" unique_id=207625212]
+position = Vector2(9, -96)
+shape = SubResource("RectangleShape2D_boundary_h")
+
+[node name="WallSouth" type="CollisionShape2D" parent="TownBoundaries" unique_id=1150701927]
+position = Vector2(-32, 179)
+shape = SubResource("RectangleShape2D_boundary_h")
+
+[node name="WallSouth2" type="CollisionShape2D" parent="TownBoundaries" unique_id=1017951017]
+position = Vector2(57, 178)
+shape = SubResource("RectangleShape2D_boundary_h")
+
+[node name="WallWest" type="CollisionShape2D" parent="TownBoundaries" unique_id=1535544683]
+position = Vector2(-237, 94)
+shape = SubResource("RectangleShape2D_boundary_v")
+
+[node name="WallWest2" type="CollisionShape2D" parent="TownBoundaries" unique_id=851063104]
+position = Vector2(-236, 39)
+shape = SubResource("RectangleShape2D_boundary_v")
+
+[node name="WallWest3" type="CollisionShape2D" parent="TownBoundaries" unique_id=1866373818]
+position = Vector2(-207, -91)
+rotation = 0.0837758
+shape = SubResource("RectangleShape2D_boundary_v")
+
+[node name="WallEastTop" type="CollisionShape2D" parent="TownBoundaries" unique_id=2098586424]
+position = Vector2(226, -28.75)
+shape = SubResource("RectangleShape2D_boundary_v")
+
+[node name="WallEastBottom" type="CollisionShape2D" parent="TownBoundaries" unique_id=1004365819]
+position = Vector2(254, 92)
+shape = SubResource("RectangleShape2D_boundary_v")
+
+[node name="MineEntranceArea" type="Area2D" parent="." unique_id=1346173433]
+position = Vector2(193, 11)
+
+[node name="EntranceSprite" type="Sprite2D" parent="MineEntranceArea" unique_id=1399223865]
+texture_filter = 1
+position = Vector2(3.7499945, 1.75)
+scale = Vector2(1.0882351, 1.0393258)
+texture = SubResource("AtlasTexture_2hvcg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MineEntranceArea" unique_id=1657007984]
+visible = false
+position = Vector2(5, 11)
+shape = SubResource("RectangleShape2D_mine")
+
+[node name="PromptLabel" type="Label" parent="MineEntranceArea" unique_id=387071369]
+offset_left = -70.0
+offset_top = -34.0
+offset_right = 70.0
+offset_bottom = -22.0
+theme_override_colors/font_color = Color(0.98, 0.75, 0.14, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 8
+text = "⛏️ [E] MASUK KE TAMBANG (LANTAI 1)"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="MineEntranceArea" unique_id=602147680]
+
+[node name="RealCollisionShape2D2" type="CollisionShape2D" parent="MineEntranceArea/StaticBody2D" unique_id=198185097]
+position = Vector2(-14, -1)
+rotation = 2.220059
+scale = Vector2(1.0000005, 1.0000005)
+shape = SubResource("RectangleShape2D_n51ow")
+
+[node name="RealCollisionShape2D" type="CollisionShape2D" parent="MineEntranceArea/StaticBody2D" unique_id=83357873]
+position = Vector2(9, -12)
+rotation = 1.5707964
+scale = Vector2(1.0000002, 1.0000002)
+shape = SubResource("RectangleShape2D_n51ow")
+
+[node name="RealCollisionShape2D3" type="CollisionShape2D" parent="MineEntranceArea/StaticBody2D" unique_id=1217620675]
+position = Vector2(31.824677, 11)
+rotation = -1.5707964
+scale = Vector2(1.0000008, 1.0000008)
+shape = SubResource("RectangleShape2D_n51ow")
+
+[node name="NPCs" type="Node2D" parent="." unique_id=906398240]
+z_index = -1
+y_sort_enabled = true
+
+[node name="Mayor" type="Node2D" parent="NPCs" unique_id=230787471]
+position = Vector2(-10, -24)
+
+[node name="Sprite2D" type="Sprite2D" parent="NPCs/Mayor" unique_id=2030153664]
+texture_filter = 1
+texture = ExtResource("17_npc_mayor")
+hframes = 6
+vframes = 5
+
+[node name="StaticBody2D" type="StaticBody2D" parent="NPCs/Mayor" unique_id=512543905]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/Mayor/StaticBody2D" unique_id=486476685]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_npc_body")
+
+[node name="Area2D" type="Area2D" parent="NPCs/Mayor" unique_id=1788027070]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/Mayor/Area2D" unique_id=1709131408]
+shape = SubResource("CircleShape2D_npc_area")
+
+[node name="Prompt" type="Label" parent="NPCs/Mayor" unique_id=1080839907]
+visible = false
+offset_left = -50.0
+offset_top = -24.0
+offset_right = 50.0
+offset_bottom = -14.0
+theme_override_colors/font_color = Color(0.38, 0.82, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 7
+text = "[E] Bicara dengan Walikota"
+horizontal_alignment = 1
+
+[node name="QuestMarker" type="Label" parent="NPCs/Mayor" unique_id=593361518]
+offset_left = -10.0
+offset_top = -24.0
+offset_right = 10.0
+offset_bottom = -12.0
+theme_override_colors/font_color = Color(0.95, 0.22, 0.22, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 10
+text = "!"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Blacksmith" type="Node2D" parent="NPCs" unique_id=1452815234]
+position = Vector2(129, -60)
+
+[node name="Sprite2D" type="Sprite2D" parent="NPCs/Blacksmith" unique_id=1601272531]
+texture_filter = 1
+texture = ExtResource("19_npc_worker")
+hframes = 6
+vframes = 7
+
+[node name="StaticBody2D" type="StaticBody2D" parent="NPCs/Blacksmith" unique_id=534743063]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/Blacksmith/StaticBody2D" unique_id=1726976790]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_npc_body")
+
+[node name="Area2D" type="Area2D" parent="NPCs/Blacksmith" unique_id=428446060]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/Blacksmith/Area2D" unique_id=1949186950]
+shape = SubResource("CircleShape2D_npc_area")
+
+[node name="Prompt" type="Label" parent="NPCs/Blacksmith" unique_id=1541685501]
+visible = false
+offset_left = -55.0
+offset_top = -24.0
+offset_right = 55.0
+offset_bottom = -14.0
+theme_override_colors/font_color = Color(0.38, 0.82, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 7
+text = "[E] Blacksmith Ivan (Toko & Tempa)"
+horizontal_alignment = 1
+
+[node name="QuestMarker" type="Label" parent="NPCs/Blacksmith" unique_id=1103247401]
+offset_left = -10.0
+offset_top = -24.0
+offset_right = 10.0
+offset_bottom = -12.0
+theme_override_colors/font_color = Color(0.13, 0.8, 0.35, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 10
+text = "!"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Elder" type="Node2D" parent="NPCs" unique_id=1101502927]
+position = Vector2(-145, 53)
+
+[node name="Sprite2D" type="Sprite2D" parent="NPCs/Elder" unique_id=555623375]
+texture_filter = 1
+texture = ExtResource("20_npc_elder")
+hframes = 6
+vframes = 5
+
+[node name="StaticBody2D" type="StaticBody2D" parent="NPCs/Elder" unique_id=390025029]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/Elder/StaticBody2D" unique_id=373251783]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_npc_body")
+
+[node name="Area2D" type="Area2D" parent="NPCs/Elder" unique_id=877380701]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/Elder/Area2D" unique_id=126700191]
+shape = SubResource("CircleShape2D_npc_area")
+
+[node name="Prompt" type="Label" parent="NPCs/Elder" unique_id=1029831334]
+visible = false
+offset_left = -50.0
+offset_top = -24.0
+offset_right = 50.0
+offset_bottom = -14.0
+theme_override_colors/font_color = Color(0.38, 0.82, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 7
+text = "[E] Bicara dengan Kakek Eldon"
+horizontal_alignment = 1
+
+[node name="QuestMarker" type="Label" parent="NPCs/Elder" unique_id=1101828051]
+offset_left = -10.0
+offset_top = -24.0
+offset_right = 10.0
+offset_bottom = -12.0
+theme_override_colors/font_color = Color(0.23, 0.55, 0.98, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 10
+text = "!"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Herbalist" type="Node2D" parent="NPCs" unique_id=1681792701]
+position = Vector2(-179, -23)
+
+[node name="Sprite2D" type="Sprite2D" parent="NPCs/Herbalist" unique_id=1408554250]
+texture_filter = 1
+texture = ExtResource("21_npc_herbalist")
+hframes = 6
+vframes = 5
+
+[node name="StaticBody2D" type="StaticBody2D" parent="NPCs/Herbalist" unique_id=783984930]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/Herbalist/StaticBody2D" unique_id=1716758799]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_npc_body")
+
+[node name="Area2D" type="Area2D" parent="NPCs/Herbalist" unique_id=1623309470]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/Herbalist/Area2D" unique_id=891101545]
+shape = SubResource("CircleShape2D_npc_area")
+
+[node name="Prompt" type="Label" parent="NPCs/Herbalist" unique_id=1689444674]
+visible = false
+offset_left = -50.0
+offset_top = -24.0
+offset_right = 50.0
+offset_bottom = -14.0
+theme_override_colors/font_color = Color(0.38, 0.82, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 7
+text = "[E] Nenek Martha (Apotek & Herbal)"
+horizontal_alignment = 1
+
+[node name="QuestMarker" type="Label" parent="NPCs/Herbalist" unique_id=1563220953]
+offset_left = -10.0
+offset_top = -24.0
+offset_right = 10.0
+offset_bottom = -12.0
+theme_override_colors/font_color = Color(0.13, 0.8, 0.35, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 10
+text = "!"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Farmer" type="Node2D" parent="NPCs" unique_id=252550040]
+z_index = 3
+position = Vector2(-144, 119)
+
+[node name="Sprite2D" type="Sprite2D" parent="NPCs/Farmer" unique_id=1570456313]
+z_index = 3
+texture_filter = 1
+texture = ExtResource("22_npc_farmer")
+hframes = 6
+vframes = 5
+
+[node name="StaticBody2D" type="StaticBody2D" parent="NPCs/Farmer" unique_id=779215254]
+z_index = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/Farmer/StaticBody2D" unique_id=1080355009]
+z_index = 3
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_npc_body")
+
+[node name="Area2D" type="Area2D" parent="NPCs/Farmer" unique_id=225555568]
+z_index = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/Farmer/Area2D" unique_id=1471497865]
+z_index = 3
+shape = SubResource("CircleShape2D_npc_area")
+
+[node name="Prompt" type="Label" parent="NPCs/Farmer" unique_id=894251018]
+visible = false
+offset_left = -50.0
+offset_top = -24.0
+offset_right = 50.0
+offset_bottom = -14.0
+theme_override_colors/font_color = Color(0.38, 0.82, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 7
+text = "[E] Bicara dengan Farmer Tom"
+horizontal_alignment = 1
+
+[node name="QuestMarker" type="Label" parent="NPCs/Farmer" unique_id=1250342151]
+z_index = 3
+offset_left = -10.0
+offset_top = -24.0
+offset_right = 10.0
+offset_bottom = -12.0
+theme_override_colors/font_color = Color(0.13, 0.8, 0.35, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 10
+text = "!"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MinerBob" type="Node2D" parent="NPCs" unique_id=23027176]
+position = Vector2(135, 25)
+
+[node name="Sprite2D" type="Sprite2D" parent="NPCs/MinerBob" unique_id=261889836]
+texture_filter = 1
+texture = ExtResource("19_npc_worker")
+hframes = 6
+vframes = 7
+
+[node name="StaticBody2D" type="StaticBody2D" parent="NPCs/MinerBob" unique_id=1322780826]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/MinerBob/StaticBody2D" unique_id=1040902421]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_npc_body")
+
+[node name="Area2D" type="Area2D" parent="NPCs/MinerBob" unique_id=2133619675]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/MinerBob/Area2D" unique_id=1580485049]
+shape = SubResource("CircleShape2D_npc_area")
+
+[node name="Prompt" type="Label" parent="NPCs/MinerBob" unique_id=1100394662]
+visible = false
+offset_left = -50.0
+offset_top = -24.0
+offset_right = 50.0
+offset_bottom = -14.0
+theme_override_colors/font_color = Color(0.38, 0.82, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 7
+text = "[E] Bicara dengan Miner Bob"
+horizontal_alignment = 1
+
+[node name="QuestMarker" type="Label" parent="NPCs/MinerBob" unique_id=1034663003]
+offset_left = -10.0
+offset_top = -24.0
+offset_right = 10.0
+offset_bottom = -12.0
+theme_override_colors/font_color = Color(0.23, 0.55, 0.98, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 10
+text = "!"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="VillagerLily" type="Node2D" parent="NPCs" unique_id=49858680]
+position = Vector2(50, 61)
+
+[node name="Sprite2D" type="Sprite2D" parent="NPCs/VillagerLily" unique_id=1511751705]
+texture_filter = 1
+texture = ExtResource("34_npc_villager_woman")
+hframes = 6
+vframes = 5
+
+[node name="StaticBody2D" type="StaticBody2D" parent="NPCs/VillagerLily" unique_id=1338624854]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/VillagerLily/StaticBody2D" unique_id=1284215221]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_npc_body")
+
+[node name="Area2D" type="Area2D" parent="NPCs/VillagerLily" unique_id=486961801]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/VillagerLily/Area2D" unique_id=1236113556]
+shape = SubResource("CircleShape2D_npc_area")
+
+[node name="Prompt" type="Label" parent="NPCs/VillagerLily" unique_id=1277743755]
+visible = false
+offset_left = -45.0
+offset_top = -24.0
+offset_right = 45.0
+offset_bottom = -14.0
+theme_override_colors/font_color = Color(0.38, 0.82, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 7
+text = "[E] Bicara dengan Lily"
+horizontal_alignment = 1
+
+[node name="VillagerLucas" type="Node2D" parent="NPCs" unique_id=2053294066]
+position = Vector2(-17, 85)
+
+[node name="Sprite2D" type="Sprite2D" parent="NPCs/VillagerLucas" unique_id=1890023089]
+texture_filter = 1
+texture = ExtResource("35_npc_villager_man")
+hframes = 6
+vframes = 5
+
+[node name="StaticBody2D" type="StaticBody2D" parent="NPCs/VillagerLucas" unique_id=2041963620]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/VillagerLucas/StaticBody2D" unique_id=2093624068]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_npc_body")
+
+[node name="Area2D" type="Area2D" parent="NPCs/VillagerLucas" unique_id=866570200]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/VillagerLucas/Area2D" unique_id=3183673]
+shape = SubResource("CircleShape2D_npc_area")
+
+[node name="Prompt" type="Label" parent="NPCs/VillagerLucas" unique_id=2141409501]
+visible = false
+offset_left = -45.0
+offset_top = -24.0
+offset_right = 45.0
+offset_bottom = -14.0
+theme_override_colors/font_color = Color(0.38, 0.82, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 7
+text = "[E] Bicara dengan Lucas"
+horizontal_alignment = 1
+
+[node name="VillagerEvelyn" type="Node2D" parent="NPCs" unique_id=1266356473]
+position = Vector2(-76, -16)
+
+[node name="Sprite2D" type="Sprite2D" parent="NPCs/VillagerEvelyn" unique_id=669089400]
+texture_filter = 1
+position = Vector2(-5, 6)
+texture = ExtResource("36_npc_noble_woman")
+hframes = 6
+vframes = 5
+
+[node name="StaticBody2D" type="StaticBody2D" parent="NPCs/VillagerEvelyn" unique_id=1627043920]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/VillagerEvelyn/StaticBody2D" unique_id=1253491676]
+position = Vector2(-5, 14)
+shape = SubResource("CircleShape2D_npc_body")
+
+[node name="Area2D" type="Area2D" parent="NPCs/VillagerEvelyn" unique_id=1681181786]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/VillagerEvelyn/Area2D" unique_id=2072759193]
+position = Vector2(-6, 4)
+shape = SubResource("CircleShape2D_npc_area")
+
+[node name="Prompt" type="Label" parent="NPCs/VillagerEvelyn" unique_id=1135193226]
+visible = false
+offset_left = -55.0
+offset_top = -24.0
+offset_right = 55.0
+offset_bottom = -14.0
+theme_override_colors/font_color = Color(0.38, 0.82, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 7
+text = "[E] Bicara dengan Nyonya Evelyn"
+horizontal_alignment = 1
+
+[node name="DecorativeTile" type="Node2D" parent="." unique_id=1773300540]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="DecorativeTile" unique_id=698698773]
+z_index = -5
+tile_map_data = PackedByteArray("AAAIAPj/AAAfAC0AAAAJAPn/AAAfAC0AAAAIAPv/AAAfAC0AAAD4//f/AAAjACwAAADy//v/AAAmADAAAADy//z/AAAmADAAAAD0//f/AAApACwAAAAKAPr/AAAhAC0AAADr/wwAAAAfAC0AAADt/w0AAAAhAC0AAADr/w4AAAAfAC8AAADv/w0AAAAGAC4AAADw/w0AAAAGAC4AAADx/w0AAAAGAC4AAADy/w0AAAAGAC4AAADz/w0AAAAGAC4AAAD0/w0AAAAGAC4AAAD1/w0AAAAGAC4AAADv/w4AAAAGAC4AAADv/w8AAAAGAC4AAADv/xAAAAAGAC4AAADv/xEAAAAGAC4AAADv/xIAAAAGAC4AAADw/xIAAAAGAC4AAADx/xIAAAAGAC4AAADy/xIAAAAGAC4AAADz/xIAAAAGAC4AAAD0/xIAAAAGAC4AAAD1/xIAAAAGAC4AAAD1/xEAAAAGAC4AAAD1/xAAAAAGAC4AAAD1/w8AAAAGAC4AAAD1/w4AAAAGAC4AAAD0/w4AAAAGAC4AAADy/w4AAAAGAC4AAADx/w4AAAAGAC4AAADw/w4AAAAGAC4AAADw/w8AAAAGAC4AAADw/xAAAAAGAC4AAADw/xEAAAAGAC4AAADx/xEAAAAGAC4AAADx/xAAAAAGAC4AAADx/w8AAAAGAC4AAADy/w8AAAAGAC4AAADy/xAAAAAGAC4AAADy/xEAAAAGAC4AAADz/xEAAAAGAC4AAADz/xAAAAAGAC4AAADz/w8AAAAGAC4AAAD0/w8AAAAGAC4AAAD0/xAAAAAGAC4AAAD0/xEAAAAGAC4AAADv/wwAAAAGAC4AAADw/wwAAAAGAC4AAADx/wwAAAAGAC4AAADy/wwAAAAGAC4AAADz/wwAAAAGAC4AAAD0/wwAAAAGAC4AAAD1/wwAAAAGAC4AAAD2/xIAAAAGAC4AAAD2/xEAAAAGAC4AAAD2/xAAAAAGAC4AAAD2/w8AAAAGAC4AAAD2/w4AAAAGAC4AAAD2/w0AAAAGAC4AAAD2/wwAAAAGAC4AAADs/xIAAAAVACwAAADo/xIAAAAVACwAAADz/w4AAAAGAC4AAADs/woAAAALACwAAADt/woAAAALACwAAADu/woAAAALACwAAADv/woAAAALACwAAADw/woAAAALACwAAADx/woAAAALACwAAADy/woAAAALACwAAADz/woAAAALACwAAAD0/woAAAALACwAAAD1/woAAAALACwAAADo/woAAAALACwAAADn/woAAAALACwAAADm/woAAAALACwAAADm/xQAAAALACwAAADo/xQAAAALACwAAADq/xQAAAALACwAAADs/xQAAAALACwAAADu/xQAAAALACwAAADw/xQAAAALACwAAADx/xQAAAALACwAAADy/xQAAAALACwAAAD0/xQAAAALACwAAAD1/xQAAAALACwAAAD3/xQAAAANACwAAAD3/woAAAANACwAAAD4/wwAAAAOAC4AAAD4/xIAAAAOAC4AAAD4/woAAAAOADIAAAD4/xQAAAAOADIAAADl/wwAAAAOAC4AAADl/woAAAAOADIAAADl/w8AAAAOAC4AAADl/xAAAAAOAC4AAADl/xEAAAAOAC4AAADl/xIAAAAOAC4AAADl/xQAAAAOADIAAADr/woAAAAJACwAAADo/wwAAAAaACsAAAD8/xYAAAAkABAAAAD2/xYAAAAVABAAAADr/xYAAAAVABAAAADp/xYAAAAVABAAAADi/xYAAAATABAAAADi/xMAAAATAA0AAADi/xEAAAATAA0AAADi/w8AAAATAA0AAADi/w0AAAATAA0AAADi/wsAAAATAA0AAADi/wkAAAATAA0AAADi/wcAAAATAA0AAADi/wUAAAATAA0AAADi/wMAAAATAA0AAADi/wEAAAATAA0AAADi////AAATAA0AAADi//3/AAATAA0AAADj//z/AAAEAA0AAADl//z/AAAEAA0AAADm//n/AAANAA0AAADm//f/AAANAA0AAADn//T/AAAEAA0AAADp//T/AAAEAA0AAADr//T/AAAEAA0AAADt//T/AAAEAA0AAADv//T/AAAEAA0AAADy//T/AAAHAA0AAAD1//T/AAAEAA0AAAD4//T/AAAHAA0AAAD7//T/AAAEAA0AAAD+//T/AAAHAA0AAAABAPT/AAAEAA0AAAADAPT/AAAHAA0AAAAGAPT/AAAEAA0AAAAIAPT/AAAHAA0AAAALAPT/AAAEAA0AAAANAPT/AAAHAA0AAAAQAPT/AAAEAA0AAAASAPT/AAAHAA0AAAAVAPT/AAAEAA0AAAAXAPT/AAAHAA0AAAAaAPT/AAAEAA0AAAAbAPf/AAANAA0AAAAbAP3/AAANAA0AAAAbAAEAAAANAA0AAAAcAAQAAAAEAA0AAAAMABYAAAAVABAAAAAgABYAAAAkABAAAAAeABYAAAAhABAAAAAXABYAAAAVABAAAAAgABUAAAATAA0AAAAgABMAAAATAA0AAAAgABEAAAATAA0AAAAgAA8AAAATAA0AAAAgAA0AAAATAA0AAAAgAAsAAAATAA0AAAAgAAkAAAATAA0AAAAgAAcAAAATAA0AAAAgAAUAAAATAA0AAAAeAAQAAAAhABAAAAAgAAQAAAAkABAAAAA=")
+tile_set = SubResource("TileSet_fei7j")
+
+[node name="TownCanvas" type="CanvasLayer" parent="." unique_id=1027330344]
+layer = 65
+
+[node name="ModalBackdrop" type="ColorRect" parent="TownCanvas" unique_id=1626574773]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.45)
+
+[node name="QuestModal" type="PanelContainer" parent="TownCanvas" unique_id=1913960644]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -58.0
+offset_right = 125.0
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_terraria_bg")
+
+[node name="VBox" type="VBoxContainer" parent="TownCanvas/QuestModal" unique_id=1016426570]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="Header" type="HBoxContainer" parent="TownCanvas/QuestModal/VBox" unique_id=33959707]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="PortraitBox" type="PanelContainer" parent="TownCanvas/QuestModal/VBox/Header" unique_id=438902202]
+custom_minimum_size = Vector2(34, 34)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_avatar_box")
+
+[node name="Portrait" type="TextureRect" parent="TownCanvas/QuestModal/VBox/Header/PortraitBox" unique_id=1906100233]
+texture_filter = 1
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Names" type="VBoxContainer" parent="TownCanvas/QuestModal/VBox/Header" unique_id=234558615]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 1
+
+[node name="NPCName" type="Label" parent="TownCanvas/QuestModal/VBox/Header/Names" unique_id=226583382]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98, 0.88, 0.45, 1)
+theme_override_font_sizes/font_size = 8
+text = "Andrew"
+
+[node name="NPCRole" type="Label" parent="TownCanvas/QuestModal/VBox/Header/Names" unique_id=668771296]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.68, 0.8, 0.95, 1)
+theme_override_font_sizes/font_size = 6
+text = "Pemandu Desa"
+
+[node name="FavHearts" type="Label" parent="TownCanvas/QuestModal/VBox/Header/Names" unique_id=2098685426]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98, 0.45, 0.55, 1)
+theme_override_font_sizes/font_size = 6
+text = "♥ 0.0 / 7.0 Hati"
+
+[node name="SpecialItemLabel" type="Label" parent="TownCanvas/QuestModal/VBox/Header/Names" unique_id=1082867586]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.75, 0.5, 1)
+theme_override_font_sizes/font_size = 5
+text = "🔒 Hadiah Spesial di 7 Hati"
+
+[node name="TalkView" type="VBoxContainer" parent="TownCanvas/QuestModal/VBox" unique_id=1702812948]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 3
+
+[node name="DialogBox" type="PanelContainer" parent="TownCanvas/QuestModal/VBox/TalkView" unique_id=1852968525]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_bubble_box")
+
+[node name="DialogText" type="Label" parent="TownCanvas/QuestModal/VBox/TalkView/DialogBox" unique_id=2124459632]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.95, 0.95, 0.98, 1)
+theme_override_font_sizes/font_size = 7
+text = "Halo kawan! Selamat datang di desa kami."
+autowrap_mode = 2
+
+[node name="TalkActions" type="HBoxContainer" parent="TownCanvas/QuestModal/VBox/TalkView" unique_id=1581817923]
+layout_mode = 2
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="BtnClose" type="Button" parent="TownCanvas/QuestModal/VBox/TalkView/TalkActions" unique_id=84182901]
+custom_minimum_size = Vector2(18, 15)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 7
+theme_override_styles/normal = SubResource("StyleBoxFlat_terraria_btn_close")
+text = "✕"
+
+[node name="BtnNextTalk" type="Button" parent="TownCanvas/QuestModal/VBox/TalkView/TalkActions" unique_id=570345251]
+custom_minimum_size = Vector2(18, 15)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 7
+theme_override_styles/normal = SubResource("StyleBoxFlat_terraria_btn_talk")
+text = "💬"
+
+[node name="BtnOpenQuest" type="Button" parent="TownCanvas/QuestModal/VBox/TalkView/TalkActions" unique_id=7224349]
+custom_minimum_size = Vector2(46, 15)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 6
+theme_override_styles/normal = SubResource("StyleBoxFlat_terraria_btn_action")
+text = "📜 Quest"
+
+[node name="BtnOpenGift" type="Button" parent="TownCanvas/QuestModal/VBox/TalkView/TalkActions" unique_id=1702371140]
+custom_minimum_size = Vector2(46, 15)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 6
+theme_override_styles/normal = SubResource("StyleBoxFlat_terraria_btn_action")
+text = "🎁 Hadiah"
+
+[node name="BtnAction" type="Button" parent="TownCanvas/QuestModal/VBox/TalkView/TalkActions" unique_id=1377471471]
+custom_minimum_size = Vector2(50, 15)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 6
+theme_override_styles/normal = SubResource("StyleBoxFlat_terraria_btn_action")
+text = "💰 Toko Biji"
+
+[node name="BtnAction2" type="Button" parent="TownCanvas/QuestModal/VBox/TalkView/TalkActions" unique_id=384394447]
+custom_minimum_size = Vector2(54, 15)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 6
+theme_override_styles/normal = SubResource("StyleBoxFlat_terraria_btn_action")
+text = "🔨 Tempa"
+
+[node name="QuestView" type="VBoxContainer" parent="TownCanvas/QuestModal/VBox" unique_id=2133605583]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 2
+
+[node name="QuestBox" type="VBoxContainer" parent="TownCanvas/QuestModal/VBox/QuestView" unique_id=1710562847]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 1
+
+[node name="TitleRow" type="HBoxContainer" parent="TownCanvas/QuestModal/VBox/QuestView/QuestBox" unique_id=63591091]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="TownCanvas/QuestModal/VBox/QuestView/QuestBox/TitleRow" unique_id=1356809355]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.98, 0.88, 0.45, 1)
+theme_override_font_sizes/font_size = 7
+text = "Judul Quest"
+
+[node name="Badge" type="Label" parent="TownCanvas/QuestModal/VBox/QuestView/QuestBox/TitleRow" unique_id=206277670]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.85, 0.4, 1)
+theme_override_font_sizes/font_size = 6
+text = "[BIASA]"
+
+[node name="Desc" type="Label" parent="TownCanvas/QuestModal/VBox/QuestView/QuestBox" unique_id=1894365496]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.95, 1)
+theme_override_font_sizes/font_size = 6
+text = "Deskripsi quest..."
+autowrap_mode = 2
+
+[node name="TargetProgress" type="Label" parent="TownCanvas/QuestModal/VBox/QuestView/QuestBox" unique_id=523413009]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.7, 0.3, 1)
+theme_override_font_sizes/font_size = 6
+text = "🎯 Target: Kumpulkan 3 Batu Bara"
+
+[node name="TimerLabel" type="Label" parent="TownCanvas/QuestModal/VBox/QuestView/QuestBox" unique_id=1612359583]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.8, 0.9, 1)
+theme_override_font_sizes/font_size = 5
+text = "⏱️ Waktu tersisa: 05:00"
+
+[node name="RewardsLabel" type="Label" parent="TownCanvas/QuestModal/VBox/QuestView/QuestBox" unique_id=1840473949]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98, 0.85, 0.3, 1)
+theme_override_font_sizes/font_size = 6
+text = "🎁 Hadiah: +60 Koin | +30 XP | +1 Hati"
+
+[node name="QuestActions" type="HBoxContainer" parent="TownCanvas/QuestModal/VBox/QuestView" unique_id=2097268669]
+layout_mode = 2
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="BtnCloseQuest" type="Button" parent="TownCanvas/QuestModal/VBox/QuestView/QuestActions" unique_id=1345795318]
+custom_minimum_size = Vector2(18, 15)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 7
+theme_override_styles/normal = SubResource("StyleBoxFlat_terraria_btn_close")
+text = "✕"
+
+[node name="BtnBackFromQuest" type="Button" parent="TownCanvas/QuestModal/VBox/QuestView/QuestActions" unique_id=1915666066]
+custom_minimum_size = Vector2(46, 15)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 6
+theme_override_styles/normal = SubResource("StyleBoxFlat_terraria_btn_talk")
+text = "💬 Kembali"
+
+[node name="BtnAccept" type="Button" parent="TownCanvas/QuestModal/VBox/QuestView/QuestActions" unique_id=2088560123]
+custom_minimum_size = Vector2(65, 15)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 6
+theme_override_styles/normal = SubResource("StyleBoxFlat_terraria_btn_action")
+text = "✔ Terima Quest"
+
+[node name="BtnComplete" type="Button" parent="TownCanvas/QuestModal/VBox/QuestView/QuestActions" unique_id=1821012880]
+visible = false
+custom_minimum_size = Vector2(65, 15)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 6
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_green")
+text = "🎉 Serahkan"
+
+[node name="GiftView" type="VBoxContainer" parent="TownCanvas/QuestModal/VBox" unique_id=1839340327]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 2
+
+[node name="GiftIntro" type="Label" parent="TownCanvas/QuestModal/VBox/GiftView" unique_id=924721856]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98, 0.88, 0.45, 1)
+theme_override_font_sizes/font_size = 6
+text = "Pilih Hadiah untuk Diberikan:"
+
+[node name="GiftScroll" type="ScrollContainer" parent="TownCanvas/QuestModal/VBox/GiftView" unique_id=277641374]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GiftGrid" type="HFlowContainer" parent="TownCanvas/QuestModal/VBox/GiftView/GiftScroll" unique_id=1582605812]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 3
+theme_override_constants/v_separation = 2
+
+[node name="GiftFeedback" type="Label" parent="TownCanvas/QuestModal/VBox/GiftView" unique_id=1404874349]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.85, 0.9, 1)
+theme_override_font_sizes/font_size = 5
+horizontal_alignment = 1
+
+[node name="GiftActions" type="HBoxContainer" parent="TownCanvas/QuestModal/VBox/GiftView" unique_id=1194754693]
+layout_mode = 2
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="BtnCloseGift" type="Button" parent="TownCanvas/QuestModal/VBox/GiftView/GiftActions" unique_id=143593612]
+custom_minimum_size = Vector2(18, 15)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 7
+theme_override_styles/normal = SubResource("StyleBoxFlat_terraria_btn_close")
+text = "✕"
+
+[node name="BtnBackFromGift" type="Button" parent="TownCanvas/QuestModal/VBox/GiftView/GiftActions" unique_id=1237588855]
+custom_minimum_size = Vector2(46, 15)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 6
+theme_override_styles/normal = SubResource("StyleBoxFlat_terraria_btn_talk")
+text = "💬 Kembali"
+
+[node name="ShopModal" type="NinePatchRect" parent="TownCanvas" unique_id=836569933]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.0
+offset_top = -55.0
+offset_right = 105.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_cozy_town_panel")
+patch_margin_left = 8
+patch_margin_top = 12
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="TownCanvas/ShopModal" unique_id=1975763574]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 6.0
+offset_right = -8.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 4
+
+[node name="Title" type="Label" parent="TownCanvas/ShopModal/VBox" unique_id=1894325517]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.25, 0.12, 0.06, 1)
+theme_override_font_sizes/font_size = 8
+text = "⚒️ TOKO BIJIH & PELEBURAN IVAN"
+horizontal_alignment = 1
+
+[node name="TotalLabel" type="Label" parent="TownCanvas/ShopModal/VBox" unique_id=767473992]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.15, 0.12, 0.1, 1)
+theme_override_font_sizes/font_size = 7
+text = "Menghitung bijih..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtnSellAll" type="Button" parent="TownCanvas/ShopModal/VBox" unique_id=2085515949]
+custom_minimum_size = Vector2(120, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 7
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_green")
+text = "💰 JUAL SEMUA BIJIH"
+
+[node name="BtnCloseShop" type="Button" parent="TownCanvas/ShopModal/VBox" unique_id=1654215799]
+custom_minimum_size = Vector2(50, 14)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.9, 0.9, 0.95, 1)
+theme_override_font_sizes/font_size = 7
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_close")
+text = "Tutup"
+
+[node name="ApothecaryModal" type="PanelContainer" parent="TownCanvas" unique_id=1869735746]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -65.0
+offset_right = 125.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_terraria_bg")
+
+[node name="VBox" type="VBoxContainer" parent="TownCanvas/ApothecaryModal" unique_id=147209619]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="HeaderRow" type="HBoxContainer" parent="TownCanvas/ApothecaryModal/VBox" unique_id=357268876]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="TownCanvas/ApothecaryModal/VBox/HeaderRow" unique_id=486107204]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.25, 0.12, 0.06, 1)
+theme_override_font_sizes/font_size = 8
+text = "🌿 APOTEK NENEK MARTHA 🌿"
+
+[node name="Coins" type="Label" parent="TownCanvas/ApothecaryModal/VBox/HeaderRow" unique_id=952057061]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.72, 0.45, 0.1, 1)
+theme_override_font_sizes/font_size = 7
+text = "🪙 Koin: 0"
+
+[node name="Sub" type="Label" parent="TownCanvas/ApothecaryModal/VBox" unique_id=213661823]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35, 0.28, 0.2, 1)
+theme_override_font_sizes/font_size = 6
+text = "Beli perban atau ramuan untuk memulihkan tenagamu:"
+
+[node name="CardsRow" type="HBoxContainer" parent="TownCanvas/ApothecaryModal/VBox" unique_id=1033218117]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="CardBandage" type="PanelContainer" parent="TownCanvas/ApothecaryModal/VBox/CardsRow" unique_id=1262808340]
+custom_minimum_size = Vector2(80, 85)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_card_bg")
+
+[node name="VBox" type="VBoxContainer" parent="TownCanvas/ApothecaryModal/VBox/CardsRow/CardBandage" unique_id=691373300]
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="TownCanvas/ApothecaryModal/VBox/CardsRow/CardBandage/VBox" unique_id=1394247925]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("29_bandage")
+expand_mode = 1
+
+[node name="Name" type="Label" parent="TownCanvas/ApothecaryModal/VBox/CardsRow/CardBandage/VBox" unique_id=707586338]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.95, 0.8, 1)
+theme_override_font_sizes/font_size = 7
+text = "PERBAN HERBAL"
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="TownCanvas/ApothecaryModal/VBox/CardsRow/CardBandage/VBox" unique_id=372123656]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.85, 0.85, 1)
+theme_override_font_sizes/font_size = 5
+text = "Pulihkan +2 Hati
+Cepat & Murah"
+horizontal_alignment = 1
+
+[node name="Price" type="Label" parent="TownCanvas/ApothecaryModal/VBox/CardsRow/CardBandage/VBox" unique_id=958723190]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.3, 1)
+theme_override_font_sizes/font_size = 6
+text = "🪙 15 Koin"
+horizontal_alignment = 1
+
+[node name="BtnBuyBandage" type="Button" parent="TownCanvas/ApothecaryModal/VBox/CardsRow/CardBandage/VBox" unique_id=1527209088]
+custom_minimum_size = Vector2(50, 13)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 6
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_wood")
+text = "BELI"
+
+[node name="CardMedkit" type="PanelContainer" parent="TownCanvas/ApothecaryModal/VBox/CardsRow" unique_id=759072349]
+custom_minimum_size = Vector2(80, 85)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_card_bg")
+
+[node name="VBox" type="VBoxContainer" parent="TownCanvas/ApothecaryModal/VBox/CardsRow/CardMedkit" unique_id=818968759]
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="TownCanvas/ApothecaryModal/VBox/CardsRow/CardMedkit/VBox" unique_id=648731221]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("30_medkit")
+expand_mode = 1
+
+[node name="Name" type="Label" parent="TownCanvas/ApothecaryModal/VBox/CardsRow/CardMedkit/VBox" unique_id=425440311]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.95, 0.8, 1)
+theme_override_font_sizes/font_size = 7
+text = "KOTAK OBAT P3K"
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="TownCanvas/ApothecaryModal/VBox/CardsRow/CardMedkit/VBox" unique_id=1255783651]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.85, 0.85, 1)
+theme_override_font_sizes/font_size = 5
+text = "Pulihkan 100%
+Darah Secara Penuh"
+horizontal_alignment = 1
+
+[node name="Price" type="Label" parent="TownCanvas/ApothecaryModal/VBox/CardsRow/CardMedkit/VBox" unique_id=813430401]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.3, 1)
+theme_override_font_sizes/font_size = 6
+text = "🪙 40 Koin"
+horizontal_alignment = 1
+
+[node name="BtnBuyMedkit" type="Button" parent="TownCanvas/ApothecaryModal/VBox/CardsRow/CardMedkit/VBox" unique_id=1512100231]
+custom_minimum_size = Vector2(50, 13)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 6
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_wood")
+text = "BELI"
+
+[node name="CardElixir" type="PanelContainer" parent="TownCanvas/ApothecaryModal/VBox/CardsRow" unique_id=1276891786]
+custom_minimum_size = Vector2(80, 85)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_card_bg")
+
+[node name="VBox" type="VBoxContainer" parent="TownCanvas/ApothecaryModal/VBox/CardsRow/CardElixir" unique_id=1766755442]
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="TownCanvas/ApothecaryModal/VBox/CardsRow/CardElixir/VBox" unique_id=1317557874]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("31_elixir")
+expand_mode = 1
+
+[node name="Name" type="Label" parent="TownCanvas/ApothecaryModal/VBox/CardsRow/CardElixir/VBox" unique_id=2107630250]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.95, 0.8, 1)
+theme_override_font_sizes/font_size = 7
+text = "ELIXIR KEHIDUPAN"
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="TownCanvas/ApothecaryModal/VBox/CardsRow/CardElixir/VBox" unique_id=1709590061]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.85, 0.85, 1)
+theme_override_font_sizes/font_size = 5
+text = "100% Darah +
+Buff Regen 3 Menit"
+horizontal_alignment = 1
+
+[node name="Price" type="Label" parent="TownCanvas/ApothecaryModal/VBox/CardsRow/CardElixir/VBox" unique_id=933319700]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.3, 1)
+theme_override_font_sizes/font_size = 6
+text = "🪙 100 Koin"
+horizontal_alignment = 1
+
+[node name="BtnBuyElixir" type="Button" parent="TownCanvas/ApothecaryModal/VBox/CardsRow/CardElixir/VBox" unique_id=1852861321]
+custom_minimum_size = Vector2(50, 13)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 6
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_wood")
+text = "BELI"
+
+[node name="Feedback" type="Label" parent="TownCanvas/ApothecaryModal/VBox" unique_id=1111727887]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.15, 0.45, 0.15, 1)
+theme_override_font_sizes/font_size = 6
+horizontal_alignment = 1
+
+[node name="BtnCloseApothecary" type="Button" parent="TownCanvas/ApothecaryModal/VBox" unique_id=2108540639]
+custom_minimum_size = Vector2(60, 14)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 6
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_close")
+text = "✕ TUTUP"
+
+[node name="OreShopModal" type="NinePatchRect" parent="TownCanvas" unique_id=1856851456]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -82.0
+offset_right = 140.0
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_cozy_town_panel")
+patch_margin_left = 8
+patch_margin_top = 12
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="TownCanvas/OreShopModal" unique_id=503946140]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 6.0
+offset_right = -8.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 2
+
+[node name="HeaderRow" type="HBoxContainer" parent="TownCanvas/OreShopModal/VBox" unique_id=70900725]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="TownCanvas/OreShopModal/VBox/HeaderRow" unique_id=1287492735]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.25, 0.12, 0.06, 1)
+theme_override_font_sizes/font_size = 8
+text = "🏪 TOKO BIJIH & PELEBURAN IVAN"
+
+[node name="Coins" type="Label" parent="TownCanvas/OreShopModal/VBox/HeaderRow" unique_id=1115263137]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.72, 0.45, 0.1, 1)
+theme_override_font_sizes/font_size = 7
+text = "🪙 Koin: 0"
+
+[node name="Sub" type="Label" parent="TownCanvas/OreShopModal/VBox" unique_id=864365229]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35, 0.28, 0.2, 1)
+theme_override_font_sizes/font_size = 6
+text = "Pilih bijih yang ingin kamu jual. Simpan bijih untuk tempa beliung!"
+
+[node name="Scroll" type="ScrollContainer" parent="TownCanvas/OreShopModal/VBox" unique_id=2077466779]
+custom_minimum_size = Vector2(260, 88)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="OreList" type="VBoxContainer" parent="TownCanvas/OreShopModal/VBox/Scroll" unique_id=1219954730]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="Feedback" type="Label" parent="TownCanvas/OreShopModal/VBox" unique_id=1593154628]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.15, 0.45, 0.15, 1)
+theme_override_font_sizes/font_size = 6
+horizontal_alignment = 1
+
+[node name="BtnCloseOreShop" type="Button" parent="TownCanvas/OreShopModal/VBox" unique_id=694450616]
+custom_minimum_size = Vector2(60, 14)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 6
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_close")
+text = "✕ TUTUP"
+
+[node name="CraftModal" type="NinePatchRect" parent="TownCanvas" unique_id=1888035364]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -82.0
+offset_right = 140.0
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_cozy_town_panel")
+patch_margin_left = 8
+patch_margin_top = 12
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="TownCanvas/CraftModal" unique_id=1262004919]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 6.0
+offset_right = -8.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 2
+
+[node name="HeaderRow" type="HBoxContainer" parent="TownCanvas/CraftModal/VBox" unique_id=1370002185]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="TownCanvas/CraftModal/VBox/HeaderRow" unique_id=2013004963]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.25, 0.12, 0.06, 1)
+theme_override_font_sizes/font_size = 8
+text = "⚒️ TEMPA BELIUNG (ANVIL)"
+
+[node name="Coins" type="Label" parent="TownCanvas/CraftModal/VBox/HeaderRow" unique_id=1706594263]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.72, 0.45, 0.1, 1)
+theme_override_font_sizes/font_size = 7
+text = "🪙 Koin: 0"
+
+[node name="Sub" type="Label" parent="TownCanvas/CraftModal/VBox" unique_id=72823391]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35, 0.28, 0.2, 1)
+theme_override_font_sizes/font_size = 6
+text = "Tempa beliung tingkat berikutnya untuk menembus batu goa lebih dalam!"
+
+[node name="Content" type="HBoxContainer" parent="TownCanvas/CraftModal/VBox" unique_id=1030759132]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 6
+
+[node name="LeftBox" type="VBoxContainer" parent="TownCanvas/CraftModal/VBox/Content" unique_id=561523284]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 3
+
+[node name="MaterialsLabel" type="Label" parent="TownCanvas/CraftModal/VBox/Content/LeftBox" unique_id=932667583]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.25, 0.12, 0.06, 1)
+theme_override_font_sizes/font_size = 6
+text = "📦 Bahan yang dibutuhkan:"
+
+[node name="MatOre" type="Label" parent="TownCanvas/CraftModal/VBox/Content/LeftBox" unique_id=1467084946]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.12, 0.1, 0.08, 1)
+theme_override_font_sizes/font_size = 6
+text = "⛏️ Bijih: 0 / 8 Batu"
+
+[node name="MatCoin" type="Label" parent="TownCanvas/CraftModal/VBox/Content/LeftBox" unique_id=360773490]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.12, 0.1, 0.08, 1)
+theme_override_font_sizes/font_size = 6
+text = "🪙 Koin: 0 / 50 Koin"
+
+[node name="AnvilArea" type="HBoxContainer" parent="TownCanvas/CraftModal/VBox/Content/LeftBox" unique_id=1441771690]
+layout_mode = 2
+alignment = 1
+
+[node name="AnvilIcon" type="TextureRect" parent="TownCanvas/CraftModal/VBox/Content/LeftBox/AnvilArea" unique_id=337830283]
+custom_minimum_size = Vector2(32, 24)
+layout_mode = 2
+texture = ExtResource("32_anvil")
+expand_mode = 1
+
+[node name="NextPickaxePreview" type="TextureRect" parent="TownCanvas/CraftModal/VBox/Content/LeftBox/AnvilArea" unique_id=16201103]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("33_pickaxe_stone")
+expand_mode = 1
+
+[node name="BtnCraft" type="Button" parent="TownCanvas/CraftModal/VBox/Content/LeftBox" unique_id=873819115]
+custom_minimum_size = Vector2(90, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 7
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_craft")
+text = "🔨 TEMPA SEKARANG"
+
+[node name="RightBox" type="VBoxContainer" parent="TownCanvas/CraftModal/VBox/Content" unique_id=1728062418]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="TargetTitle" type="Label" parent="TownCanvas/CraftModal/VBox/Content/RightBox" unique_id=43428154]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.15, 0.38, 0.72, 1)
+theme_override_font_sizes/font_size = 7
+text = "Beliung Batu (Tingkat 2/5)"
+
+[node name="TargetPower" type="Label" parent="TownCanvas/CraftModal/VBox/Content/RightBox" unique_id=327620576]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.15, 0.55, 0.25, 1)
+theme_override_font_sizes/font_size = 6
+text = "⛏️ Kekuatan Gali: 2"
+
+[node name="TargetDesc" type="Label" parent="TownCanvas/CraftModal/VBox/Content/RightBox" unique_id=1287517510]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.25, 0.2, 1)
+theme_override_font_sizes/font_size = 6
+text = "Mampu menambang batu keras dan mengekstrak bijih besi."
+autowrap_mode = 2
+
+[node name="TargetStatus" type="Label" parent="TownCanvas/CraftModal/VBox/Content/RightBox" unique_id=1532290967]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.2, 0.2, 1)
+theme_override_font_sizes/font_size = 6
+text = "❌ Bahan belum mencukupi"
+
+[node name="Feedback" type="Label" parent="TownCanvas/CraftModal/VBox" unique_id=1370240272]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.15, 0.45, 0.15, 1)
+theme_override_font_sizes/font_size = 6
+horizontal_alignment = 1
+
+[node name="BtnCloseCraft" type="Button" parent="TownCanvas/CraftModal/VBox" unique_id=1646774928]
+custom_minimum_size = Vector2(60, 14)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 6
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_close")
+text = "✕ TUTUP"
+
+[node name="AudioCoin" type="AudioStreamPlayer" parent="TownCanvas" unique_id=1267856937]
+stream = ExtResource("24_sfx_coin")
+volume_db = -4.0
+
+[node name="AudioFanfare" type="AudioStreamPlayer" parent="TownCanvas" unique_id=1035516885]
+stream = ExtResource("25_sfx_fanfare")
+volume_db = -2.0
+
+[node name="AudioQuest" type="AudioStreamPlayer" parent="TownCanvas" unique_id=1154677675]
+stream = ExtResource("26_sfx_quest")
+volume_db = -3.0
+
+[node name="PauseLayer" type="CanvasLayer" parent="." unique_id=622459776]
+
+[node name="PauseMenu" parent="PauseLayer" unique_id=975707249 instance=ExtResource("29_67633")]
+
+[node name="Player" parent="." unique_id=791993002 instance=ExtResource("2_player")]
+position = Vector2(0, 10)
+
+[node name="ShopBackSound" type="AudioStreamPlayer" parent="." unique_id=1348539515]
+stream = ExtResource("33_4axs1")
+volume_db = 7.0
+script = ExtResource("33_n51ow")
+
+[node name="TownBackSound" type="AudioStreamPlayer" parent="." unique_id=665972281]
+stream = ExtResource("35_h8fnw")
+script = ExtResource("35_sv8qu")
+
+[connection signal="pressed" from="TownCanvas/ApothecaryModal/VBox/BtnCloseApothecary" to="." method="_on_btn_close_apothecary_pressed"]

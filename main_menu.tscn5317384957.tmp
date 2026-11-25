@@ -1,0 +1,229 @@
+[gd_scene format=3 uid="uid://dad52lf60ff5g"]
+
+[ext_resource type="Texture2D" uid="uid://dgagacxatdwtu" path="res://assets/images/menu/main_menu/WhatsApp Image 2026-08-27 at 14.01.47.jpeg" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://baoi1r7qcc0up" path="res://scripts/main_menu.gd" id="1_fu7sn"]
+[ext_resource type="Texture2D" uid="uid://by1m15cj2qnw" path="res://Buttons.png" id="3_jix8l"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ifeun"]
+texture = ExtResource("1_06t4h")
+
+[sub_resource type="FontVariation" id="FontVariation_mfweh"]
+variation_embolden = 1.35
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nixot"]
+texture = ExtResource("3_jix8l")
+region_rect = Rect2(162, 501, 43, 13)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_glbon"]
+texture = ExtResource("3_jix8l")
+region_rect = Rect2(162, 501, 43, 13)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nlkkf"]
+texture = ExtResource("3_jix8l")
+region_rect = Rect2(162, 501, 43, 13)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_frq1j"]
+texture = ExtResource("3_jix8l")
+region_rect = Rect2(173, 322, 56, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lb50s"]
+texture = ExtResource("3_jix8l")
+region_rect = Rect2(308, 274, 39, 13)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jsgte"]
+texture = ExtResource("3_jix8l")
+region_rect = Rect2(173, 418, 56, 12)
+
+[sub_resource type="GDScript" id="GDScript_jix8l"]
+
+[sub_resource type="GDScript" id="GDScript_fu7sn"]
+script/source = "extends HSlider
+
+@export var audio_bus_name: String
+
+var audio_bus_id
+
+func _ready():
+	audio_bus_id = AudioServer.get_bus_index(audio_bus_name)
+
+func _on_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(audio_bus_id, value)
+"
+
+[node name="MainMenu" type="Control" unique_id=2126901529]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fu7sn")
+
+[node name="Panel" type="Panel" parent="." unique_id=1774175924]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ifeun")
+
+[node name="MainButtons" type="VBoxContainer" parent="." unique_id=214011260]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 50.0
+offset_top = -6.0
+offset_right = 154.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Start" type="Button" parent="MainButtons" unique_id=330705269]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.07450981, 0.07450981, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_mfweh")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxTexture_nixot")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_glbon")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nlkkf")
+text = "START"
+
+[node name="Settings" type="Button" parent="MainButtons" unique_id=1752166546]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.07450981, 0.07450981, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_mfweh")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxTexture_nixot")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_glbon")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nlkkf")
+text = "SETTINGS
+"
+
+[node name="Settings3" type="Button" parent="MainButtons" unique_id=473719485]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxTexture_frq1j")
+
+[node name="Credit3" type="Button" parent="MainButtons" unique_id=941478996]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.06666667, 0.0627451, 0.043137256, 1)
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxTexture_lb50s")
+text = "Credit"
+
+[node name="Quit3" type="Button" parent="MainButtons" unique_id=1195681984]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxTexture_jsgte")
+
+[node name="Credit" type="Button" parent="MainButtons" unique_id=320221493]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.07450981, 0.07450981, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_mfweh")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxTexture_nixot")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_glbon")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nlkkf")
+text = "CREDIT"
+
+[node name="Quit" type="Button" parent="MainButtons" unique_id=1613674833]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.07450981, 0.07450981, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_mfweh")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxTexture_nixot")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_glbon")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nlkkf")
+text = "QUIT"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1189914222]
+autoplay = true
+bus = &"music"
+
+[node name="SettingsMenu" type="Panel" parent="." unique_id=1566664787]
+process_mode = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.5
+offset_top = -51.0
+offset_right = 83.5
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_jix8l")
+
+[node name="Panel" type="Panel" parent="SettingsMenu" unique_id=1335274709]
+layout_mode = 0
+offset_right = 167.5
+offset_bottom = 103.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsMenu" unique_id=1280432068]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.75
+offset_top = -51.0
+offset_right = 83.75
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="SettingsMenu/VBoxContainer" unique_id=684759454]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="Volume" type="HSlider" parent="SettingsMenu/VBoxContainer" unique_id=500080475]
+layout_mode = 2
+min_value = -80.0
+max_value = 0.0
+script = SubResource("GDScript_fu7sn")
+
+[node name="Mute" type="CheckBox" parent="SettingsMenu/VBoxContainer" unique_id=134805196]
+layout_mode = 2
+
+[node name="Screen_mode" type="OptionButton" parent="SettingsMenu/VBoxContainer" unique_id=1532869976]
+layout_mode = 2
+
+[node name="Button5" type="Button" parent="SettingsMenu/VBoxContainer" unique_id=1096632772]
+custom_minimum_size = Vector2(80, 0)
+custom_maximum_size = Vector2(-1, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxTexture_jsgte")
+
+[connection signal="pressed" from="MainButtons/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="MainButtons/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MainButtons/Settings3" to="." method="_on_Settings_pressed"]
+[connection signal="pressed" from="MainButtons/Credit3" to="." method="_on_Credit_pressed"]
+[connection signal="pressed" from="MainButtons/Quit3" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="MainButtons/Credit" to="." method="_on_credit_pressed"]
+[connection signal="pressed" from="MainButtons/Quit" to="." method="_on_quit_pressed"]
+[connection signal="value_changed" from="SettingsMenu/VBoxContainer/Volume" to="SettingsMenu/VBoxContainer/Volume" method="_on_value_changed"]
+[connection signal="pressed" from="SettingsMenu/VBoxContainer/Button5" to="." method="_on_button_5_pressed"]

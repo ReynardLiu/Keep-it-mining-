@@ -1,0 +1,585 @@
+[gd_scene format=3 uid="uid://b82yxm34j18pa"]
+
+[ext_resource type="Script" uid="uid://cu4x55iynutlj" path="res://scripts/game_hud.gd" id="1_hud_script"]
+[ext_resource type="Texture2D" uid="uid://cpswy40nc7utu" path="res://assets/images/hud/heart_full.png" id="2_heart_full"]
+[ext_resource type="Texture2D" uid="uid://cmgknfmtw76ae" path="res://assets/images/hud/coin.png" id="3_coin"]
+[ext_resource type="Texture2D" uid="uid://dxykrim6f0a1t" path="res://assets/images/hud/pickaxe_wood.png" id="4_pickaxe"]
+[ext_resource type="Texture2D" uid="uid://dnq7efdvatb2" path="res://assets/images/battle/ui_panel.png" id="5_panel"]
+[ext_resource type="AudioStream" uid="uid://nobipbbev1ys" path="res://assets/audio/upgrade.wav" id="6_sfx_up"]
+[ext_resource type="AudioStream" uid="uid://8nkvnp3fvilx" path="res://assets/audio/coin.wav" id="7_sfx_coin"]
+[ext_resource type="Texture2D" uid="uid://crspiubruyve" path="res://assets/images/Ores/stone.png" id="8_ore_stone"]
+[ext_resource type="Texture2D" uid="uid://cttflbcdqvaqa" path="res://assets/images/Ores/coal.png" id="9_ore_coal"]
+[ext_resource type="Texture2D" uid="uid://ds6jm4cohgoni" path="res://assets/images/Ores/tin.png" id="10_ore_tin"]
+[ext_resource type="Texture2D" uid="uid://d4doybc0ax367" path="res://assets/images/Ores/iron.png" id="11_ore_iron"]
+[ext_resource type="Texture2D" uid="uid://blpa0cqegr2qh" path="res://assets/images/Ores/silver.png" id="12_ore_silver"]
+[ext_resource type="Texture2D" uid="uid://cowgodxs67hwx" path="res://assets/images/Ores/gold.png" id="13_ore_gold"]
+[ext_resource type="Texture2D" uid="uid://bnwf71pray3t" path="res://assets/images/gems/amethyst.png" id="14_ore_amethyst"]
+[ext_resource type="Texture2D" uid="uid://uvjxyt64ocu2" path="res://assets/images/gems/diamond.png" id="15_ore_diamond"]
+[ext_resource type="Texture2D" uid="uid://4s8mxh3v7ysw" path="res://assets/images/ui/UiCozyFree.png" id="16_ui_cozy"]
+[ext_resource type="Texture2D" uid="uid://romkc3emothg" path="res://NewAsset/tiles/backpack_LVL_01.png" id="17_backpack"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cozy_hud"]
+atlas = ExtResource("16_ui_cozy")
+region = Rect2(8, 167, 86, 79)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_norm"]
+bg_color = Color(0.18, 0.16, 0.28, 0.95)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4, 0.45, 0.65, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slot_bg"]
+bg_color = Color(0.12, 0.1, 0.08, 0.85)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.35, 0.28, 0.2, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ore_stone"]
+atlas = ExtResource("8_ore_stone")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ore_coal"]
+atlas = ExtResource("9_ore_coal")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ore_tin"]
+atlas = ExtResource("10_ore_tin")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ore_iron"]
+atlas = ExtResource("11_ore_iron")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ore_silver"]
+atlas = ExtResource("12_ore_silver")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ore_gold"]
+atlas = ExtResource("13_ore_gold")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ore_amethyst"]
+atlas = ExtResource("14_ore_amethyst")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ore_diamond"]
+atlas = ExtResource("15_ore_diamond")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hud_bg"]
+bg_color = Color(0.08, 0.08, 0.12, 0.8)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="GameHUD" type="CanvasLayer" unique_id=656467699]
+process_mode = 3
+layer = 50
+script = ExtResource("1_hud_script")
+
+[node name="HUDContainer" type="Control" parent="." unique_id=1165809147]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TopLeft" type="NinePatchRect" parent="HUDContainer" unique_id=1401432354]
+texture_filter = 1
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 106.0
+offset_bottom = 68.0
+texture = SubResource("AtlasTexture_cozy_hud")
+patch_margin_left = 6
+patch_margin_top = 10
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="Margin" type="MarginContainer" parent="HUDContainer/TopLeft" unique_id=303112187]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 11
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 7
+
+[node name="VBox" type="VBoxContainer" parent="HUDContainer/TopLeft/Margin" unique_id=104629717]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="HeartsRow" type="HBoxContainer" parent="HUDContainer/TopLeft/Margin/VBox" unique_id=345555808]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="H1" type="TextureRect" parent="HUDContainer/TopLeft/Margin/VBox/HeartsRow" unique_id=253941258]
+custom_minimum_size = Vector2(9, 9)
+layout_mode = 2
+texture = ExtResource("2_heart_full")
+expand_mode = 1
+
+[node name="H2" type="TextureRect" parent="HUDContainer/TopLeft/Margin/VBox/HeartsRow" unique_id=660188810]
+custom_minimum_size = Vector2(9, 9)
+layout_mode = 2
+texture = ExtResource("2_heart_full")
+expand_mode = 1
+
+[node name="H3" type="TextureRect" parent="HUDContainer/TopLeft/Margin/VBox/HeartsRow" unique_id=1551652792]
+custom_minimum_size = Vector2(9, 9)
+layout_mode = 2
+texture = ExtResource("2_heart_full")
+expand_mode = 1
+
+[node name="H4" type="TextureRect" parent="HUDContainer/TopLeft/Margin/VBox/HeartsRow" unique_id=989061804]
+custom_minimum_size = Vector2(9, 9)
+layout_mode = 2
+texture = ExtResource("2_heart_full")
+expand_mode = 1
+
+[node name="H5" type="TextureRect" parent="HUDContainer/TopLeft/Margin/VBox/HeartsRow" unique_id=252023734]
+custom_minimum_size = Vector2(9, 9)
+layout_mode = 2
+texture = ExtResource("2_heart_full")
+expand_mode = 1
+
+[node name="H6" type="TextureRect" parent="HUDContainer/TopLeft/Margin/VBox/HeartsRow" unique_id=450211030]
+visible = false
+custom_minimum_size = Vector2(9, 9)
+layout_mode = 2
+texture = ExtResource("2_heart_full")
+expand_mode = 1
+
+[node name="LevelRow" type="HBoxContainer" parent="HUDContainer/TopLeft/Margin/VBox" unique_id=1985944505]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="LevelLabel" type="Label" parent="HUDContainer/TopLeft/Margin/VBox/LevelRow" unique_id=724683073]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.12, 0.22, 0.45, 1)
+theme_override_font_sizes/font_size = 7
+text = "⭐ Lv. 1 (XP: 0/50)"
+
+[node name="CoinRow" type="HBoxContainer" parent="HUDContainer/TopLeft/Margin/VBox" unique_id=1031963036]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="CoinIcon" type="TextureRect" parent="HUDContainer/TopLeft/Margin/VBox/CoinRow" unique_id=1118310073]
+custom_minimum_size = Vector2(9, 9)
+layout_mode = 2
+texture = ExtResource("3_coin")
+expand_mode = 1
+
+[node name="CoinLabel" type="Label" parent="HUDContainer/TopLeft/Margin/VBox/CoinRow" unique_id=2051607523]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.3, 0.05, 1)
+theme_override_font_sizes/font_size = 7
+text = "50"
+
+[node name="PickaxeRow" type="HBoxContainer" parent="HUDContainer/TopLeft/Margin/VBox" unique_id=466671623]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="PickaxeIcon" type="TextureRect" parent="HUDContainer/TopLeft/Margin/VBox/PickaxeRow" unique_id=67349884]
+custom_minimum_size = Vector2(9, 9)
+layout_mode = 2
+texture = ExtResource("4_pickaxe")
+expand_mode = 1
+
+[node name="PickaxeLabel" type="Label" parent="HUDContainer/TopLeft/Margin/VBox/PickaxeRow" unique_id=1565326892]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2, 0.15, 0.15, 1)
+theme_override_font_sizes/font_size = 7
+text = "Beliung Kayu (Daya: 1)"
+
+[node name="TopRight" type="VBoxContainer" parent="HUDContainer" unique_id=327874048]
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -140.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = 20.0
+grow_horizontal = 0
+alignment = 2
+
+[node name="DepthLabel" type="Label" parent="HUDContainer/TopRight" unique_id=1772042174]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Desa Penambang"
+horizontal_alignment = 2
+
+[node name="BtnBackpack" type="TextureButton" parent="HUDContainer" unique_id=1887045481]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 110.0
+offset_top = 4.0
+offset_right = 130.0
+offset_bottom = 24.0
+tooltip_text = "Tas [I]"
+focus_mode = 0
+texture_normal = ExtResource("17_backpack")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="InventoryModal" type="Control" parent="." unique_id=1087149432]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dimmer" type="ColorRect" parent="InventoryModal" unique_id=1067604630]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.65)
+
+[node name="Panel" type="NinePatchRect" parent="InventoryModal" unique_id=1027460332]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.0
+offset_top = -85.0
+offset_right = 135.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_panel")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="VBox" type="VBoxContainer" parent="InventoryModal/Panel" unique_id=1021182857]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 5.0
+offset_right = -6.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 3
+
+[node name="EquipmentHeader" type="HBoxContainer" parent="InventoryModal/Panel/VBox" unique_id=150372005]
+layout_mode = 2
+
+[node name="EquipTitle" type="Label" parent="InventoryModal/Panel/VBox/EquipmentHeader" unique_id=1306955356]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.98, 0.75, 0.14, 1)
+theme_override_font_sizes/font_size = 8
+text = "🛡️ EQUIPMENT (PERLENGKAPAN)"
+
+[node name="BtnClose" type="Button" parent="InventoryModal/Panel/VBox/EquipmentHeader" unique_id=1100321798]
+custom_minimum_size = Vector2(16, 12)
+layout_mode = 2
+theme_override_font_sizes/font_size = 7
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_norm")
+text = "✕"
+
+[node name="EquipContent" type="HBoxContainer" parent="InventoryModal/Panel/VBox" unique_id=1041017922]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="PickaxeSlotFrame" type="PanelContainer" parent="InventoryModal/Panel/VBox/EquipContent" unique_id=321869337]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_slot_bg")
+
+[node name="EquippedIcon" type="TextureRect" parent="InventoryModal/Panel/VBox/EquipContent/PickaxeSlotFrame" unique_id=1112440230]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_pickaxe")
+expand_mode = 1
+
+[node name="EquipDetails" type="VBoxContainer" parent="InventoryModal/Panel/VBox/EquipContent" unique_id=1019964740]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 1
+
+[node name="EquippedName" type="Label" parent="InventoryModal/Panel/VBox/EquipContent/EquipDetails" unique_id=1824586572]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_font_sizes/font_size = 8
+text = "Beliung Kayu (Tingkat 1/5)"
+
+[node name="EquippedPower" type="Label" parent="InventoryModal/Panel/VBox/EquipContent/EquipDetails" unique_id=1807924621]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.38, 0.82, 1, 1)
+theme_override_font_sizes/font_size = 7
+text = "⛏️ Daya Gali: 1"
+
+[node name="EquipHint" type="Label" parent="InventoryModal/Panel/VBox/EquipContent/EquipDetails" unique_id=102597773]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+theme_override_font_sizes/font_size = 6
+text = "(Tempa & tingkatkan beliung di Pandai Besi Ivan)"
+
+[node name="HSeparator" type="HSeparator" parent="InventoryModal/Panel/VBox" unique_id=1979695764]
+layout_mode = 2
+
+[node name="InvTitle" type="Label" parent="InventoryModal/Panel/VBox" unique_id=576834849]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98, 0.75, 0.14, 1)
+theme_override_font_sizes/font_size = 8
+text = "🎒 INVENTORY (TAS BIJIH)"
+
+[node name="Grid" type="GridContainer" parent="InventoryModal/Panel/VBox" unique_id=1272399123]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 3
+columns = 4
+
+[node name="OreStone" type="PanelContainer" parent="InventoryModal/Panel/VBox/Grid" unique_id=777642083]
+custom_minimum_size = Vector2(58, 20)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_slot_bg")
+
+[node name="HBox" type="HBoxContainer" parent="InventoryModal/Panel/VBox/Grid/OreStone" unique_id=265512005]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Icon" type="TextureRect" parent="InventoryModal/Panel/VBox/Grid/OreStone/HBox" unique_id=173290282]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_ore_stone")
+expand_mode = 1
+
+[node name="Count" type="Label" parent="InventoryModal/Panel/VBox/Grid/OreStone/HBox" unique_id=1866733366]
+layout_mode = 2
+theme_override_font_sizes/font_size = 7
+text = "x 0"
+
+[node name="OreCoal" type="PanelContainer" parent="InventoryModal/Panel/VBox/Grid" unique_id=302707756]
+custom_minimum_size = Vector2(58, 20)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_slot_bg")
+
+[node name="HBox" type="HBoxContainer" parent="InventoryModal/Panel/VBox/Grid/OreCoal" unique_id=525992588]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Icon" type="TextureRect" parent="InventoryModal/Panel/VBox/Grid/OreCoal/HBox" unique_id=362369011]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_ore_coal")
+expand_mode = 1
+
+[node name="Count" type="Label" parent="InventoryModal/Panel/VBox/Grid/OreCoal/HBox" unique_id=1917079229]
+layout_mode = 2
+theme_override_font_sizes/font_size = 7
+text = "x 0"
+
+[node name="OreTin" type="PanelContainer" parent="InventoryModal/Panel/VBox/Grid" unique_id=1894883989]
+custom_minimum_size = Vector2(58, 20)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_slot_bg")
+
+[node name="HBox" type="HBoxContainer" parent="InventoryModal/Panel/VBox/Grid/OreTin" unique_id=2030185462]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Icon" type="TextureRect" parent="InventoryModal/Panel/VBox/Grid/OreTin/HBox" unique_id=996626233]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_ore_tin")
+expand_mode = 1
+
+[node name="Count" type="Label" parent="InventoryModal/Panel/VBox/Grid/OreTin/HBox" unique_id=677105834]
+layout_mode = 2
+theme_override_font_sizes/font_size = 7
+text = "x 0"
+
+[node name="OreIron" type="PanelContainer" parent="InventoryModal/Panel/VBox/Grid" unique_id=103694371]
+custom_minimum_size = Vector2(58, 20)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_slot_bg")
+
+[node name="HBox" type="HBoxContainer" parent="InventoryModal/Panel/VBox/Grid/OreIron" unique_id=57258606]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Icon" type="TextureRect" parent="InventoryModal/Panel/VBox/Grid/OreIron/HBox" unique_id=442024257]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_ore_iron")
+expand_mode = 1
+
+[node name="Count" type="Label" parent="InventoryModal/Panel/VBox/Grid/OreIron/HBox" unique_id=515582551]
+layout_mode = 2
+theme_override_font_sizes/font_size = 7
+text = "x 0"
+
+[node name="OreSilver" type="PanelContainer" parent="InventoryModal/Panel/VBox/Grid" unique_id=537917175]
+custom_minimum_size = Vector2(58, 20)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_slot_bg")
+
+[node name="HBox" type="HBoxContainer" parent="InventoryModal/Panel/VBox/Grid/OreSilver" unique_id=1223350131]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Icon" type="TextureRect" parent="InventoryModal/Panel/VBox/Grid/OreSilver/HBox" unique_id=601443495]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_ore_silver")
+expand_mode = 1
+
+[node name="Count" type="Label" parent="InventoryModal/Panel/VBox/Grid/OreSilver/HBox" unique_id=1618435319]
+layout_mode = 2
+theme_override_font_sizes/font_size = 7
+text = "x 0"
+
+[node name="OreGold" type="PanelContainer" parent="InventoryModal/Panel/VBox/Grid" unique_id=422822285]
+custom_minimum_size = Vector2(58, 20)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_slot_bg")
+
+[node name="HBox" type="HBoxContainer" parent="InventoryModal/Panel/VBox/Grid/OreGold" unique_id=959816510]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Icon" type="TextureRect" parent="InventoryModal/Panel/VBox/Grid/OreGold/HBox" unique_id=238284237]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_ore_gold")
+expand_mode = 1
+
+[node name="Count" type="Label" parent="InventoryModal/Panel/VBox/Grid/OreGold/HBox" unique_id=912596013]
+layout_mode = 2
+theme_override_font_sizes/font_size = 7
+text = "x 0"
+
+[node name="OreAmethyst" type="PanelContainer" parent="InventoryModal/Panel/VBox/Grid" unique_id=87540149]
+custom_minimum_size = Vector2(58, 20)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_slot_bg")
+
+[node name="HBox" type="HBoxContainer" parent="InventoryModal/Panel/VBox/Grid/OreAmethyst" unique_id=1498906745]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Icon" type="TextureRect" parent="InventoryModal/Panel/VBox/Grid/OreAmethyst/HBox" unique_id=1844594956]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_ore_amethyst")
+expand_mode = 1
+
+[node name="Count" type="Label" parent="InventoryModal/Panel/VBox/Grid/OreAmethyst/HBox" unique_id=361160864]
+layout_mode = 2
+theme_override_font_sizes/font_size = 7
+text = "x 0"
+
+[node name="OreDiamond" type="PanelContainer" parent="InventoryModal/Panel/VBox/Grid" unique_id=202165555]
+custom_minimum_size = Vector2(58, 20)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_slot_bg")
+
+[node name="HBox" type="HBoxContainer" parent="InventoryModal/Panel/VBox/Grid/OreDiamond" unique_id=2130798965]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Icon" type="TextureRect" parent="InventoryModal/Panel/VBox/Grid/OreDiamond/HBox" unique_id=261739760]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_ore_diamond")
+expand_mode = 1
+
+[node name="Count" type="Label" parent="InventoryModal/Panel/VBox/Grid/OreDiamond/HBox" unique_id=1590366877]
+layout_mode = 2
+theme_override_font_sizes/font_size = 7
+text = "x 0"
+
+[node name="BottomRow" type="HBoxContainer" parent="InventoryModal/Panel/VBox" unique_id=1182483401]
+layout_mode = 2
+
+[node name="CoinsLabel" type="Label" parent="InventoryModal/Panel/VBox/BottomRow" unique_id=2078054363]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.98, 0.75, 0.14, 1)
+theme_override_font_sizes/font_size = 8
+text = "🪙 Koin: 0"
+
+[node name="CloseHint" type="Label" parent="InventoryModal/Panel/VBox/BottomRow" unique_id=1224904082]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 6
+text = "[I] / [ESC] Tutup"
+
+[node name="BannerPanel" type="PanelContainer" parent="." unique_id=1523365563]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -110.0
+offset_top = 48.0
+offset_right = 110.0
+offset_bottom = 75.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hud_bg")
+
+[node name="MarginContainer" type="MarginContainer" parent="BannerPanel" unique_id=2118069843]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 4
+
+[node name="BannerLabel" type="Label" parent="BannerPanel/MarginContainer" unique_id=1527543375]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9, 0.4, 1)
+theme_override_font_sizes/font_size = 8
+text = "Banner message"
+horizontal_alignment = 1
+
+[node name="AudioUpgrade" type="AudioStreamPlayer" parent="." unique_id=1993179589]
+stream = ExtResource("6_sfx_up")
+volume_db = -2.0
+
+[node name="AudioCoin" type="AudioStreamPlayer" parent="." unique_id=1162790208]
+stream = ExtResource("7_sfx_coin")
+volume_db = -4.0

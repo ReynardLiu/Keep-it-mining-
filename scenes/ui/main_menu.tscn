@@ -1,0 +1,297 @@
+[gd_scene format=3 uid="uid://dad52lf60ff5g"]
+
+[ext_resource type="Script" uid="uid://baoi1r7qcc0up" path="res://scripts/main_menu.gd" id="1_x2yvf"]
+[ext_resource type="Texture2D" uid="uid://dgagacxatdwtu" path="res://assets/images/menu/main_menu/mainMenu.jpeg" id="2_uhagc"]
+[ext_resource type="Texture2D" uid="uid://by1m15cj2qnw" path="res://assets/images/menu/Buttons.png" id="3_btxxm"]
+[ext_resource type="AudioStream" uid="uid://byxx1yqu8qr0r" path="res://assets/audio/button_audio.wav" id="4_wb0q5"]
+[ext_resource type="Script" uid="uid://bdfu7fh7bp8k7" path="res://scripts/audio_ui.gd" id="5_q85j6"]
+[ext_resource type="AudioStream" uid="uid://bena88huvf82q" path="res://assets/audio/Medieval_Travelers_Journey_Medieval_Music_for_Relaxation_Adventure (trimmed by happyscribe.com).ogg" id="6_btxxm"]
+[ext_resource type="Script" uid="uid://cops5rsfb11qa" path="res://scripts/main_menu_backsound.gd" id="7_wb0q5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ha671"]
+atlas = ExtResource("3_btxxm")
+region = Rect2(66, 501, 43, 13)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_37pnm"]
+texture = SubResource("AtlasTexture_ha671")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_hover"]
+bg_color = Color(0.18000168, 0.0050373883, 0.21234885, 0.75686276)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.98, 0.75, 0.14, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_modal"]
+bg_color = Color(0.08, 0.07, 0.14, 0.95)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.98, 0.75, 0.14, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_norm"]
+bg_color = Color(0.12, 0.1, 0.2, 0.9)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.35, 0.38, 0.55, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="MainMenu" type="Control" unique_id=1591834513]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x2yvf")
+
+[node name="Background" type="TextureRect" parent="." unique_id=989022055]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_uhagc")
+expand_mode = 1
+
+[node name="DimOverlay" type="ColorRect" parent="." unique_id=383731646]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04, 0.03, 0.08, 0.55)
+
+[node name="MainButtons" type="VBoxContainer" parent="." unique_id=1762224229]
+modulate = Color(0.7058824, 0, 0.7058824, 1)
+custom_maximum_size = Vector2(100, -1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.822
+anchor_top = 0.55600005
+anchor_right = 0.822
+anchor_bottom = 0.55600005
+offset_left = -50.04001
+offset_top = -23.08001
+offset_right = 49.95999
+offset_bottom = 74.91999
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 4
+
+[node name="Start" type="Button" parent="MainButtons" unique_id=1153737232]
+custom_minimum_size = Vector2(130, 20)
+layout_mode = 2
+theme_override_colors/font_color = Color(18.892157, 18.892157, 18.892157, 1)
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_37pnm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+theme_override_styles/focus = SubResource("StyleBoxFlat_btn_hover")
+text = "▶ START ADVENTURE"
+
+[node name="Settings" type="Button" parent="MainButtons" unique_id=1793422932]
+custom_minimum_size = Vector2(130, 20)
+layout_mode = 2
+theme_override_colors/font_color = Color(16.638432, 16.638432, 16.638432, 1)
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_37pnm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+theme_override_styles/focus = SubResource("StyleBoxFlat_btn_hover")
+text = "⚙️ SETTINGS"
+
+[node name="Credit" type="Button" parent="MainButtons" unique_id=581741948]
+custom_minimum_size = Vector2(130, 20)
+layout_mode = 2
+theme_override_colors/font_color = Color(18.892157, 18.892157, 18.892157, 1)
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_37pnm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+theme_override_styles/focus = SubResource("StyleBoxFlat_btn_hover")
+text = "📜 GUIDE & CREDITS"
+
+[node name="Quit" type="Button" parent="MainButtons" unique_id=170493519]
+custom_minimum_size = Vector2(130, 20)
+layout_mode = 2
+theme_override_colors/font_color = Color(18.892157, 18.892157, 18.892157, 1)
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_37pnm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+theme_override_styles/focus = SubResource("StyleBoxFlat_btn_hover")
+text = "🚪 QUIT"
+
+[node name="SettingsMenu" type="PanelContainer" parent="." unique_id=1645061144]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = -60.0
+offset_right = 110.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_modal")
+
+[node name="VBox" type="VBoxContainer" parent="SettingsMenu" unique_id=999692958]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 5
+
+[node name="Title" type="Label" parent="SettingsMenu/VBox" unique_id=844022631]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98, 0.75, 0.14, 1)
+theme_override_font_sizes/font_size = 9
+text = "⚙️SETTINGS"
+horizontal_alignment = 1
+
+[node name="HBoxVol" type="HBoxContainer" parent="SettingsMenu/VBox" unique_id=431194019]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsMenu/VBox/HBoxVol" unique_id=1355700443]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Volume:"
+
+[node name="VolumeSlider" type="HSlider" parent="SettingsMenu/VBox/HBoxVol" unique_id=1589198696]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = -30.0
+max_value = 6.0
+
+[node name="HBoxMute" type="HBoxContainer" parent="SettingsMenu/VBox" unique_id=89827363]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsMenu/VBox/HBoxMute" unique_id=2075738299]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Mute Sound:"
+
+[node name="MuteCheck" type="CheckBox" parent="SettingsMenu/VBox/HBoxMute" unique_id=1860710524]
+layout_mode = 2
+
+[node name="HBoxScreen" type="HBoxContainer" parent="SettingsMenu/VBox" unique_id=1277104023]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsMenu/VBox/HBoxScreen" unique_id=1974023091]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Screen Mode:"
+
+[node name="ScreenModeOpt" type="OptionButton" parent="SettingsMenu/VBox/HBoxScreen" unique_id=875784364]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 7
+item_count = 2
+popup/item_0/text = "Fullscreen"
+popup/item_0/id = 0
+popup/item_1/text = "Windowed"
+popup/item_1/id = 1
+
+[node name="BtnBackSettings" type="Button" parent="SettingsMenu/VBox" unique_id=23156361]
+custom_minimum_size = Vector2(60, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_norm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+theme_override_styles/focus = SubResource("StyleBoxFlat_btn_hover")
+text = "BACK"
+
+[node name="CreditsMenu" type="PanelContainer" parent="." unique_id=966473791]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -134.0
+offset_top = -82.0
+offset_right = 136.0
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_modal")
+
+[node name="VBox" type="VBoxContainer" parent="CreditsMenu" unique_id=1915335011]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 3
+
+[node name="Title" type="Label" parent="CreditsMenu/VBox" unique_id=467517762]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98, 0.75, 0.14, 1)
+theme_override_font_sizes/font_size = 8
+text = "📜 KREDIT PEMBUAT ASET (ITCH.IO)"
+horizontal_alignment = 1
+
+[node name="GuideText" type="Label" parent="CreditsMenu/VBox" unique_id=454983071]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 6
+text = "🎮 KEEP IT MINING
+Terima kasih kepada para kreator luar biasa di Itch.io:
+
+• Szadi art. (szadiart.itch.io) - Cute Fantasy Free (Desa, Hewan & Bangunan)
+• LYASeeK (lyaseek.itch.io) - MiniFolks Villagers (Karakter & Animasi NPC)
+• nocdebalo (nocdebalo.itch.io) - UI Cozy (Antarmuka Gulungan & HUD Kayu)
+• Otterisk (otterisk.itch.io) - Hana Caraka (Goa Tambang & Rel Kereta)
+• Ventilatore (ventilatore.itch.io) - The Fantasy Tileset
+• Morbidember (morbidember.itch.io) - Pixel Pickaxes & Tools
+
+Didistribusikan secara bebas & legal di bawah Lisensi Kreator / MIT."
+
+[node name="BtnBackCredits" type="Button" parent="CreditsMenu/VBox" unique_id=900170020]
+custom_minimum_size = Vector2(60, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_norm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+theme_override_styles/focus = SubResource("StyleBoxFlat_btn_hover")
+text = "KEMBALI"
+
+[node name="Audio_UI" type="AudioStreamPlayer" parent="." unique_id=1368663162]
+stream = ExtResource("4_wb0q5")
+script = ExtResource("5_q85j6")
+
+[node name="MainMenuBacksound" type="AudioStreamPlayer" parent="." unique_id=282020955]
+stream = ExtResource("6_btxxm")
+parameters/looping = true
+script = ExtResource("7_wb0q5")
+
+[connection signal="pressed" from="MainButtons/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="MainButtons/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MainButtons/Credit" to="." method="_on_credit_pressed"]
+[connection signal="pressed" from="MainButtons/Quit" to="." method="_on_quit_pressed"]
+[connection signal="value_changed" from="SettingsMenu/VBox/HBoxVol/VolumeSlider" to="." method="_on_volume_value_changed"]
+[connection signal="toggled" from="SettingsMenu/VBox/HBoxMute/MuteCheck" to="." method="_on_mute_toggled"]
+[connection signal="item_selected" from="SettingsMenu/VBox/HBoxScreen/ScreenModeOpt" to="." method="_on_screen_mode_item_selected"]
+[connection signal="pressed" from="SettingsMenu/VBox/BtnBackSettings" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="CreditsMenu/VBox/BtnBackCredits" to="." method="_on_back_pressed"]

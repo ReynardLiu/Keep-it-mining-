@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://iykwthmdk2ke"]
+
+[ext_resource type="Script" uid="uid://bcbrycnvubwe0" path="res://scripts/level.gd" id="1_ppgk2"]
+[ext_resource type="PackedScene" uid="uid://i6glrrg3rkpn" path="res://scenes/player.tscn" id="1_w7c3h"]
+[ext_resource type="PackedScene" uid="uid://88tqqawmv1lj" path="res://scenes/levels/map_1.tscn" id="1_w8frs"]
+[ext_resource type="AudioStream" uid="uid://diyuwmovsve81" path="res://assets/audio/shiverwash-marshes-legend-in-the-mist-soundtrack_8V0PFBIE.ogg" id="5_2r41h"]
+[ext_resource type="Script" uid="uid://yb4nqxisu30j" path="res://scripts/mist_sound.gd" id="5_ppgk2"]
+[ext_resource type="AudioStream" uid="uid://bvp0e1n2wx2le" path="res://assets/audio/dd-ambience-damp-cave-trimmed-by-happyscribecom_j5Gs9mN8.ogg" id="7_b121j"]
+[ext_resource type="Script" uid="uid://po86m2fr1ben" path="res://scripts/ambient_damp_cave.gd" id="7_klq6b"]
+[ext_resource type="Texture2D" uid="uid://bdmiovayek7es" path="res://assets/images/Props/ladder.png" id="7_ladder"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ladder"]
+atlas = ExtResource("7_ladder")
+region = Rect2(13, 8, 20, 38)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ladder"]
+radius = 16.0
+
+[node name="Level" type="Node2D" unique_id=825682426]
+script = ExtResource("1_ppgk2")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=836537986]
+
+[node name="Map" parent="." unique_id=1003293896 instance=ExtResource("1_w8frs")]
+
+[node name="LadderUpArea" type="Area2D" parent="." unique_id=382672926]
+position = Vector2(200, -32)
+
+[node name="Sprite2D" type="Sprite2D" parent="LadderUpArea" unique_id=784605357]
+texture = SubResource("AtlasTexture_ladder")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LadderUpArea" unique_id=618108933]
+shape = SubResource("CircleShape2D_ladder")
+
+[node name="PromptLabel" type="Label" parent="LadderUpArea" unique_id=441870651]
+offset_left = -60.0
+offset_top = -28.0
+offset_right = 60.0
+offset_bottom = -16.0
+theme_override_colors/font_color = Color(0.98, 0.75, 0.14, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 7
+text = "[E] Kembali ke Desa"
+horizontal_alignment = 1
+
+[node name="LadderDownArea" type="Area2D" parent="." unique_id=1791417883]
+position = Vector2(200, 184)
+
+[node name="Sprite2D" type="Sprite2D" parent="LadderDownArea" unique_id=1820465695]
+texture = SubResource("AtlasTexture_ladder")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LadderDownArea" unique_id=864259988]
+shape = SubResource("CircleShape2D_ladder")
+
+[node name="PromptLabel" type="Label" parent="LadderDownArea" unique_id=1934259190]
+offset_left = -70.0
+offset_top = -28.0
+offset_right = 70.0
+offset_bottom = -16.0
+theme_override_colors/font_color = Color(0.38, 0.82, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 7
+text = "[E] Turun ke Lantai Berikutnya"
+horizontal_alignment = 1
+
+[node name="RockContainer" type="Node2D" parent="." unique_id=1694985436]
+
+[node name="OreContainer" type="Node2D" parent="." unique_id=1194884830]
+
+[node name="Player" parent="." unique_id=890636134 instance=ExtResource("1_w7c3h")]
+position = Vector2(-32, 17)
+
+[node name="MistSound" type="AudioStreamPlayer" parent="." unique_id=697449442]
+stream = ExtResource("5_2r41h")
+parameters/looping = true
+script = ExtResource("5_ppgk2")
+
+[node name="AmbientDampCave" type="AudioStreamPlayer" parent="." unique_id=2096602004]
+stream = ExtResource("7_b121j")
+parameters/looping = true
+script = ExtResource("7_klq6b")
